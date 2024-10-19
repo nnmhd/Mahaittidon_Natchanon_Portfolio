@@ -10,6 +10,11 @@ Mobile screen less than 414px
 
 */
 
+body,
+* {
+  border: 1px skyblue solid;
+}
+
 .hidden {
   display: none;
 }
