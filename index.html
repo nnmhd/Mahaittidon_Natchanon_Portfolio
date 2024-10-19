@@ -17,14 +17,125 @@
       <h2 class="hidden">Nate's Portfolio Header Section</h2>
       <header id="header">
         <div id="header__container">
-          <div id="header__logo"></div>
-          <nav id="header__nav"></nav>
-          <div id="header__bio-text"></div>
-          <div id="header__social-link"></div>
+          <div id="header__logo"><svg id="header__nate-logo"></svg></div>
+          <div id="header__bio-text">
+            Nate is a UI designer &amp; frontend developer w/ a background in
+            creative direction, based in London, Ontario.
+          </div>
+          <nav id="header__nav">
+            <ul>
+              <li><a id="portfolio-link" href="#">Works</a></li>
+              <li><a id="contact-link" href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div id="header__social-link">
+            <button id="social-link__btn">@</button>
+          </div>
         </div>
       </header>
     </div>
 
+    <div id="hero-wrapper">
+      <h2 class="hidden">Nate's Portfolio Hero Section</h2>
+      <section id="hero__project-details">
+        <h2 id="project-details__headline">Project Headline</h2>
+        <h3 id="project-details__sub-headline">Project Subhead</h3>
+        <p id="project-details__client"></p>
+        <p id="project-details__desc"></p>
+        <div id="project-details__image-box">
+          <img src="#" alt="Project Image" />
+        </div>
+      </section>
+
+      <section id="hero__card-deck">
+        <div id="card-deck__position1" class="hero__card"></div>
+        <div id="card-deck__position2" class="hero__card"></div>
+        <div id="card-deck__position3" class="hero__card"></div>
+        <div id="card-deck__position4" class="hero__card"></div>
+        <div id="card-deck__position5" class="hero__card"></div>
+        <div id="card-deck__position6" class="hero__card"></div>
+      </section>
+    </div>
+
+    <div id="stacks-wrapper">
+      <h2 class="hidden">Nate's Stacks Section</h2>
+      <div id="stacks__container">
+        <section>
+          <h2>Stacks</h2>
+          <h3>Code</h3>
+          <ul>
+            <li>React</li>
+            <li>Git</li>
+            <li>JavaScript</li>
+            <li>mySQL</li>
+            <li>MongoDB</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Design</h3>
+          <ul>
+            <li>Cinema 4D</li>
+            <li>After Effect</li>
+            <li>Premier Pro</li>
+            <li>Figma</li>
+            <li>Illustrator</li>
+            <li>PS</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- Todo: Lightbox & Plyr needed -->
+    <div id="showreel-wrapper">
+      <div id="showreel__container"></div>
+      <p id="showreel__chatbox"></p>
+      <div id="showreel__video-container">
+        <div id="showreel__video">
+          <video src="#"></video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Todo: Array needed -->
+    <div id="testimonial-wrapper">
+      <div id="testimonial__container">
+        <div class="testimonial__card">
+          <div class="card__client_company">
+            <div class="card__client"></div>
+            <div class="card__company"></div>
+          </div>
+          <div class="card__text">
+            <div class="card__testimonial-text"></div>
+            <div class="card__testimonial-cite"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact-box-wrapper">
+      <div id="contact-box__container">
+        <p>
+          For your cool project, I can help! leave your message and email here.
+        </p>
+        <section id="contact-box__form">
+          <input id="contact-message" type="text" required />
+          <input id="contact-email" type="text" required />
+          <button id="contact-submit" type="submit">Send</button>
+        </section>
+      </div>
+    </div>
+
+    <div id="footer-wrapper">
+      <h2 class="hidden">The Nate's Portfolio Footer</h2>
+      <footer id="footer">
+        <p>Nate Mahaittidon</p>
+        <p>&copy;2024</p>
+      </footer>
+    </div>
+
+    <!-- JavaScript Area -->
     <script src="js/main.js"></script>
   </body>
 </html>
