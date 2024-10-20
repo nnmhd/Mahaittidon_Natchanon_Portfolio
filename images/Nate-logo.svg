@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 416.3 210.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #010101;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Layer_1">
+      <g>
+        <rect class="cls-1" x="128.6" y="30.2" width="32.2" height="208" transform="translate(163 -62.3) rotate(52.5)"/>
+        <rect class="cls-1" x="216.7" y="13" width="32.2" height="208" transform="translate(115.2 -115.4) rotate(36.5)"/>
+        <rect class="cls-1" x="288.1" y="2.4" width="32.2" height="208" transform="translate(46.3 -86.9) rotate(17.6)"/>
+        <rect class="cls-1" x="336.3" y="1.2" width="32.2" height="208" transform="translate(20 -52.2) rotate(8.7)"/>
+        <rect class="cls-1" x="384.1" y="2.3" width="32.2" height="208"/>
+        <circle class="cls-1" cx="15.9" cy="194.1" r="15.9"/>
+      </g>
+      <g>
+        <rect class="cls-1" x="128.6" y="30.2" width="32.2" height="208" transform="translate(163 -62.3) rotate(52.5)"/>
+        <rect class="cls-1" x="216.7" y="13" width="32.2" height="208" transform="translate(115.2 -115.4) rotate(36.5)"/>
+        <rect class="cls-1" x="288.1" y="2.4" width="32.2" height="208" transform="translate(46.3 -86.9) rotate(17.6)"/>
+        <rect class="cls-1" x="336.3" y="1.2" width="32.2" height="208" transform="translate(20 -52.2) rotate(8.7)"/>
+        <rect class="cls-1" x="384.1" y="2.3" width="32.2" height="208"/>
+        <circle class="cls-1" cx="15.9" cy="194.1" r="15.9"/>
+      </g>
+    </g>
+  </g>
+</svg>

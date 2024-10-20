@@ -16,17 +16,31 @@
     <div id="header-wrapper">
       <h2 class="hidden">Nate's Portfolio Header Section</h2>
       <header id="header">
-        <div id="header__container">
-          <div id="header__logo"><svg id="header__nate-logo"></svg></div>
-          <div id="header__bio-text"></div>
-          <nav id="header__nav">
+        <div id="header__container" class="grid-con">
+          <div
+            id="header__logo"
+            class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
+            <object
+              type="image/svg+xml"
+              data="images/Nate-logo.svg"
+              id="header__nate-logo"></object>
+          </div>
+          <div
+            id="header__bio-text"
+            class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
+          <nav
+            id="header__nav"
+            class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="#">Works</a></li>
               <li><a id="contact-link" href="#">Contact</a></li>
             </ul>
           </nav>
-          <div id="header__social-link">
-            <button id="social-link__btn">@</button>
+          <button id="header__menu-button" class="col-span-1">Menu</button>
+          <div id="header__social-link" class="col-span-1 t-col-span-1">
+            <button id="social-link__btn">
+              <object data="images/add-sign.svg" type=""></object>
+            </button>
           </div>
         </div>
       </header>
@@ -34,73 +48,87 @@
 
     <div id="hero-wrapper">
       <h2 class="hidden">Nate's Portfolio Hero Section</h2>
-      <section id="hero__project-details">
-        <h2 id="project-details__headline">Project Headline</h2>
-        <h3 id="project-details__sub-headline">Project Subhead</h3>
-        <p id="project-details__client"></p>
-        <p id="project-details__desc"></p>
-        <div id="project-details__image-box">
-          <img src="#" alt="Project Image" />
+      <div id="hero__container" class="full-width">
+        <div id="hero_project-detail__wrapper" class="col-span-full hidden">
+          <section id="hero__project-details">
+            <button id="project-details__lightbox-controller">
+              <i class="fa-thin fa-x"></i>
+            </button>
+            <div id="project-details__image">
+              <img src="#" alt="Project Image" />
+            </div>
+            <div id="project-details">
+              <h2 id="project-details__headline" class="col-span-1">
+                Project
+                <span id="project-details__sub-headline">w/ Subhead</span>
+              </h2>
+              <p id="project-details__client" class="col-span-1">Mad Company</p>
+              <p id="project-details__desc" class="col-span-1">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Possimus, laboriosam error pariatur veniam expedita consequatur
+                enim nobis et! Tempore quaerat repellat.
+              </p>
+              <a id="project-link" href="#">Go to project</a>
+            </div>
+          </section>
         </div>
-      </section>
 
-      <section id="hero__card-deck">
-        <h2 class="hidden">
-          Pick Some That Catch Your Eyes, These are Somes of Projects I Worked
-          With!
-        </h2>
-        <div id="card-deck__position1" class="hero__card"></div>
-        <div id="card-deck__position2" class="hero__card"></div>
-        <div id="card-deck__position3" class="hero__card"></div>
-        <div id="card-deck__position4" class="hero__card"></div>
-        <div id="card-deck__position5" class="hero__card"></div>
-        <div id="card-deck__position6" class="hero__card"></div>
-      </section>
+        <section id="hero__card-deck" class="col-span-full">
+          <h2 class="hidden">
+            Pick Some That Catch Your Eyes, These are Some of Projects I Worked
+            With!
+          </h2>
+          <div id="card-deck__position1" class="hero__card"></div>
+          <div id="card-deck__position2" class="hero__card"></div>
+          <div id="card-deck__position3" class="hero__card"></div>
+          <div id="card-deck__position4" class="hero__card"></div>
+          <div id="card-deck__position5" class="hero__card"></div>
+          <div id="card-deck__position6" class="hero__card"></div>
+        </section>
+      </div>
     </div>
 
     <div id="stacks-wrapper">
       <h2 class="hidden">Nate's Stacks Section</h2>
-      <div id="stacks__container">
-        <section>
-          <h2>Stacks</h2>
-          <h3>Code</h3>
-          <ul>
-            <li>React</li>
-            <li>Git</li>
-            <li>JavaScript</li>
-            <li>mySQL</li>
-            <li>MongoDB</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Design</h3>
-          <ul>
-            <li>Cinema 4D</li>
-            <li>After Effect</li>
-            <li>Premier Pro</li>
-            <li>Figma</li>
-            <li>Illustrator</li>
-            <li>PS</li>
-          </ul>
+      <div id="stacks__container" class="grid-con">
+        <section id="stacks" class="col-span-full">
+          <p>
+            Stacks <br />
+            <span>Code</span> React / Git / JavaScript / mySQL / MongoDB / HTML
+            / CSS
+            <br />
+            <span>Design </span> Cinema 4D / After Effect / Premier Pro / Figma
+            / Illustrator / PS
+          </p>
         </section>
       </div>
     </div>
 
     <div id="showreel-wrapper">
-      <div id="showreel__container"></div>
-      <p id="showreel__chatbox"></p>
-      <div id="showreel__video-container">
-        <div id="showreel__video">
-          <video src="#"></video>
+      <div id="showreel__container" class="full-width">
+        <p id="showreel__chatbox"></p>
+        <div id="showreel__video-container" class="col-span-full">
+          <video controls src="/video/sky.mov"></video>
         </div>
       </div>
     </div>
 
     <div id="testimonial-wrapper">
-      <div id="testimonial__container">
-        <div class="testimonial__card">
+      <div id="testimonial__container" class="grid-con">
+        <div class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
+          <div class="card__client_company">
+            <div class="card__client"></div>
+            <div class="card__company"></div>
+          </div>
+          <div class="card__text">
+            <div class="card__testimonial-text"></div>
+            <div class="card__testimonial-cite"></div>
+          </div>
+        </div>
+
+        <div
+          id="for-show"
+          class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
           <div class="card__client_company">
             <div class="card__client"></div>
             <div class="card__company"></div>
@@ -114,9 +142,10 @@
     </div>
 
     <div id="contact-box-wrapper">
-      <div id="contact-box__container">
-        <p>
-          For your cool project, I can help! leave your message and email here.
+      <div id="contact-box__container" class="grid-con">
+        <p class="col-span-full">
+          For your cool project, I can help! <wbr /> leave your message and
+          email here.
         </p>
         <section id="contact-box__form">
           <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
@@ -137,11 +166,14 @@
 
     <div id="footer-wrapper">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer"></footer>
+      <footer id="footer">
+        <p>Nate Mahaittidon</p>
+        <p>&copy;2024</p>
+      </footer>
     </div>
 
     <!-- JavaScript Area -->
-    <script src="js/main.js"></script>
     <script src="js/text.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
