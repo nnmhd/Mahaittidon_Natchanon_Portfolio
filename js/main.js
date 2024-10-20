@@ -1,3 +1,36 @@
-bioText = `Nate is a UI designer & frontend developer w/ a background in creative direction, based in London, Ontario.`;
+(() => {
+  // Mobile Menu controller
+  document
+    .querySelector("#header__menu-button")
+    .addEventListener("click", () => {
+      const menu = document.querySelector("#header__nav");
+      if (menu.classList.contains("hide-menu")) {
+        menu.classList.remove("hide-menu");
+        menu.classList.add("show-menu");
+      } else {
+        menu.classList.add("hide-menu");
+        menu.classList.remove("show-menu");
+      }
+    });
 
-document.querySelector("#header__bio-text").textContent = bioText;
+  // Hero Section; show project detail when click cards
+
+  const projectDetails = document.querySelector(
+    "#hero_project-detail__wrapper"
+  );
+  namecards = document.querySelectorAll(".hero__card");
+  namecards.forEach((e) => {
+    e.addEventListener("click", () => {
+      console.log("Hi!");
+      projectDetails.classList.remove("hidden");
+    });
+  });
+
+  document
+    .querySelector("#project-details__lightbox-controller")
+    .addEventListener("click", () => {
+      projectDetails.classList.add("hidden");
+    });
+
+  // Edge
+})();

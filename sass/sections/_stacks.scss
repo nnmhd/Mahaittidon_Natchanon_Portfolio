@@ -1,0 +1,28 @@
+@use "../abstracts/" as a;
+
+#stacks__container {
+  section {
+    p {
+      font-size: 2rem;
+    }
+    span {
+      color: a.$sec-black;
+    }
+  }
+}
+
+// Tablet Screen
+@media screen and (min-width: 768px) {
+  #stacks__container {
+    section {
+      text-align: center;
+      p {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+// Desktop Scren
+@media screen and (min-width: 1024px) {
+}

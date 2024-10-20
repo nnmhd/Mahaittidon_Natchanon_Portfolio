@@ -1,0 +1,196 @@
+@use "../abstracts/" as a;
+
+#hero-wrapper {
+}
+
+#hero_project-detail__wrapper {
+  position: relative;
+}
+
+#hero__project-details {
+  position: fixed;
+  display: flex;
+  top: 240px;
+  flex-direction: column;
+  height: auto;
+  margin-top: 24px;
+  background-color: a.$white;
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: a.$sec-black;
+  }
+}
+
+#project-details {
+  padding: 32px 16px;
+  width: auto;
+}
+
+#project-details__lightbox-controller {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  font-size: 1.25rem;
+}
+
+#project-details__image {
+  width: 100%;
+  height: 250px;
+  order: 0;
+  background-color: a.$sec-black;
+}
+
+#project-details__client {
+  font-size: 0.75rem;
+}
+
+#project-details__desc {
+  margin-top: 32px;
+  font-size: 1rem;
+}
+
+#project-link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: a.$sec-black;
+  text-decoration: underline;
+  margin-top: 32px;
+  float: right;
+}
+
+// !Hero Card deck
+#hero__card-deck {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  height: auto;
+  gap: 24px;
+  margin: 48px 0;
+  :nth-of-type(odd) {
+    background-color: pink;
+  }
+  :nth-of-type(even) {
+    background-color: gold;
+  }
+}
+
+.hero__card {
+  width: 320px;
+  height: 200px;
+  cursor: pointer;
+}
+
+// Tablet Screen
+
+@media screen and (min-width: 768px) {
+  #hero__project-details {
+    position: absolute;
+    top: 0;
+    h2 {
+      font-size: 2.2rem;
+    }
+    span {
+      font-size: 2.2rem;
+    }
+  }
+
+  #project-details__image {
+    height: 330px;
+  }
+
+  #project-details__client {
+    font-size: 1rem;
+  }
+
+  #project-details__desc {
+    font-size: 1.5rem;
+  }
+
+  #project-link {
+    font-size: 1rem;
+  }
+
+  //!Hero Cards
+  #hero__card-deck {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__card {
+    width: 300px;
+    height: 180px;
+    flex: 0 1 300px;
+  }
+}
+
+// Desktop Screen
+
+@media screen and (min-width: 1024px) {
+  #hero__project-details {
+    height: auto;
+    width: 100%;
+    h2 {
+    }
+    span {
+    }
+  }
+  #project-details__lightbox-controller {
+    display: none;
+  }
+
+  #project-link {
+    display: none;
+  }
+
+  #project-details__image {
+    display: none;
+  }
+
+  #project-details__image {
+    position: absolute;
+    top: 120px;
+    width: clamp(42%, 45%, 47%);
+    height: 200px;
+  }
+
+  #project-details {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+
+  #project-details__client {
+    grid-column-start: 1;
+  }
+
+  #project-details__desc {
+    position: absolute;
+    grid-column-start: 2;
+  }
+
+  //!Hero Cards
+  #hero__card-deck {
+    width: 100%;
+    margin-top: 240px;
+    row-gap: 36px;
+  }
+
+  .hero__card {
+    width: 350px;
+    height: 230px;
+    flex: 0 1 350px;
+  }
+}
