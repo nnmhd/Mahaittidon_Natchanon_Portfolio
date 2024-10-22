@@ -1,8 +1,42 @@
 @use "../abstracts/" as a;
 
 #contact-box__container {
+  margin-bottom: 48px;
   p {
     font-size: 1.25rem;
     text-align: center;
+  }
+}
+
+#contact-box__form {
+  margin-top: 32px;
+  input {
+    width: 100%;
+    border: 2px a.$sec-black solid;
+    padding: 18px;
+    font-size: 1;
+    margin-top: 16px;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+    color: a.$white;
+    background-color: a.$black;
+    padding: 18px;
+    font-size: 1;
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #contact-box__form {
+    grid-column-start: 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #contact-box__form {
+    grid-column-start: 4;
   }
 }

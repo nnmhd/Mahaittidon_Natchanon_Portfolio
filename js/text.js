@@ -10,9 +10,13 @@
   stackTextWider = `<p>Stacks <span>Code</span> React / Git / JavaScript / mySQL / MongoDB / HTML / CSS<br /> <span>Design </span> Cinema 4D / After Effect / Premier Pro / Figma / Illustrator / PS </p>`;
   stackTextMobile = `<p>Stacks <br /><span>Code</span> React / Git / JavaScript / mySQL / MongoDB / HTML / CSS<br /> <span>Design </span> Cinema 4D / After Effect / Premier Pro / Figma / Illustrator / PS </p>`;
 
-  if (window.innerWidth > 480) {
-    document.querySelector("#stacks").innerHTML = stackTextWider;
-  } else {
-    document.querySelector("#stacks").innerHTML = stackTextMobile;
+  const stacksElement = document.querySelector("#stacks");
+
+  if (stacksElement) {
+    if (window.innerWidth > 480) {
+      stacksElement.innerHTML = stackTextWider;
+    } else {
+      stacksElement.innerHTML = stackTextMobile;
+    }
   }
 })();

@@ -1,0 +1,207 @@
+@use "../abstracts/" as a;
+
+#project-wrapper {
+  margin-top: 32px;
+  margin-bottom: 72px;
+}
+
+.inside-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  row-gap: 8px;
+}
+
+#hero__image-containter {
+  width: auto;
+  height: 330px;
+  margin-bottom: 32px;
+  background-color: coral;
+  border-radius: 24px;
+}
+
+#details__project-name {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+#details__project-headline {
+  font-size: 1.25rem;
+  color: a.$sec-black;
+  font-weight: 300;
+  margin-bottom: 24px;
+  line-height: 2;
+}
+
+#details__name {
+  margin-top: 32px;
+}
+
+#details__completion-year {
+  grid-column-start: 2;
+  margin-bottom: 24px;
+}
+
+.heading-text {
+  font-weight: 600;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+}
+
+.grid-container-fullwidth {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+  padding: 0 16px;
+  margin: 24px 0 0 0;
+}
+
+#project__desc {
+  margin-top: 32px;
+}
+
+.project-image-style {
+  width: auto;
+  height: 300px;
+  margin: 32px 0 16px 0;
+  background-color: antiquewhite;
+}
+
+#other-project__containter {
+  margin-bottom: 36px;
+}
+
+.other-project__card {
+  display: flex;
+  align-items: end;
+  column-gap: 16px;
+  width: 100%;
+  height: 85px;
+}
+
+.other-project__project-headline {
+  color: a.$sec-black;
+}
+
+.other-project__image {
+  width: 25%;
+  height: 90%;
+  background-color: red;
+}
+
+// Tablet Screen
+@media screen and (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+  }
+
+  .grid-container-fullwidth {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+    padding: 0 16px;
+  }
+
+  #desc__college {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+    padding: 0 16px;
+  }
+
+  #other-project-wrapper {
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+
+  #other-project__containter {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 120vw;
+  }
+
+  .other-project__card {
+  }
+
+  .other-project__project-name,
+  .other-project__project-headline {
+    font-size: 1.2rem;
+  }
+
+  .other-project__project-headline {
+    font-weight: 300;
+  }
+
+  .other-project__image {
+    width: 30%;
+    height: 90%;
+  }
+}
+
+// Desktop Screen
+@media screen and (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 0;
+    height: 90px;
+  }
+
+  .grid-container-fullwidth {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+    padding: 0 16px;
+  }
+
+  #details__project-name {
+    padding: 0 16px;
+  }
+
+  #details__project-headline {
+    padding: 0 16px;
+  }
+
+  #desc__brief {
+    position: relative;
+  }
+
+  #desc__college {
+    width: 300px;
+    position: absolute;
+    right: 0;
+  }
+
+  #hero__image-containter {
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #other-project-wrapper {
+    margin-bottom: 64px;
+  }
+  #other-project__containter {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 1440px;
+    margin: 0 auto;
+  }
+  .other-project__image {
+    width: 30%;
+    height: 100%;
+  }
+}

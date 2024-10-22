@@ -18,17 +18,31 @@
     <div id="header-wrapper">
       <h2 class="hidden">Nate's Portfolio Header Section</h2>
       <header id="header">
-        <div id="header__container">
-          <div id="header__logo"><svg id="header__nate-logo"></svg></div>
-          <div id="header__bio-text"></div>
-          <nav id="header__nav">
+        <div id="header__container" class="grid-con">
+          <div
+            id="header__logo"
+            class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
+            <object
+              type="image/svg+xml"
+              data="images/Nate-logo.svg"
+              id="header__nate-logo"></object>
+          </div>
+          <div
+            id="header__bio-text"
+            class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
+          <nav
+            id="header__nav"
+            class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
-              <li><a id="portfolio-link" href="#">Works</a></li>
-              <li><a id="contact-link" href="#">Contact</a></li>
+              <li><a id="portfolio-link" href="project.html">Works</a></li>
+              <li><a id="contact-link" href="about.html">Contact</a></li>
             </ul>
           </nav>
-          <div id="header__social-link">
-            <button id="social-link__btn">@</button>
+          <button id="header__menu-button" class="col-span-1">Menu</button>
+          <div id="header__social-link" class="col-span-1 t-col-span-1">
+            <button id="social-link__btn">
+              <object data="images/add-sign.svg" type=""></object>
+            </button>
           </div>
         </div>
       </header>
@@ -36,8 +50,8 @@
 
     <div id="about-nate-wrapper">
       <h2 class="hidden">Nate's card</h2>
-      <div id="about-nate__container">
-        <section id="about-nate__details">
+      <div id="about-nate__container" class="grid-con">
+        <section id="about-nate__details" class="col-span-full">
           <div id="about-nate__card">
             <div id="about-nate__avatar">
               <img src="#" alt="" />
@@ -47,41 +61,63 @@
               <h3>UI Designer &amp; Frontend</h3>
             </div>
           </div>
-
-          <div id="about-nate__text">
-            <p>
-              Hello, I'm Nate, Thai-born and Ontario-based. I'm a designer and
-              developer who was a Creative Director and Editor in Thailand for
-              20 years. Coffee-addicted. <br />
-
-              Currently, besides enjoying designing with code, I'm also the
-              full-time daddy of my 8-year-old son, Chim, my Fortnite teammate.
-              I'm still the professional house cleaner for my family. <br />
-
-              We can chat about design, website development, cool projects,
-              Fortnite, or which is the best vacuum machine!
-            </p>
-          </div>
         </section>
 
-        <section id="contact-nate">
-          <h2 class="hidden">Contact Nate Easily by Chat or Direct to Email</h2>
-          <button id="contact-nate__chat-btn">Chat</button>
-          <span>Or</span>
+        <div
+          id="about-nate__text"
+          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-4">
+          <p>
+            Hello, I'm Nate, Thai-born and Ontario-based. I'm a designer and
+            developer who was a Creative Director and Editor in Thailand for 20
+            years. Coffee-addicted. <br /><br />
 
-          <div id="contact-box__form">
-            <input id="contact-message" type="text" required />
-            <input id="contact-email" type="text" required />
+            Currently, besides enjoying designing with code, I'm also the
+            full-time daddy of my 8-year-old son, Chim, my Fortnite teammate.
+            I'm still the professional house cleaner for my family. <br /><br />
+
+            We can chat about design, website development, cool projects,
+            Fortnite, or which is the best vacuum machine!
+          </p>
+        </div>
+      </div>
+
+      <div id="chat__container"><button type="button">Chat</button></div>
+      <p>Or</p>
+
+      <div id="contact-box-wrapper">
+        <div id="contact-box__container" class="grid-con">
+          <section
+            id="contact-box__form"
+            class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
+            <h2 class="hidden">
+              Connect Nate Easily Here! Let's Make Some Chat
+            </h2>
+            <input
+              id="contact-message"
+              type="text"
+              placeholder="tell me a little about the project."
+              required />
+            <input
+              id="contact-email"
+              type="text"
+              placeholder="your@email"
+              required />
             <button id="contact-submit" type="submit">Send</button>
-          </div>
-          <p>I will reply in a day, promise 🤞</p>
-        </section>
+          </section>
+          <p id="about-nate__promise" class="col-span-full">
+            I will reply in a day, promise 🤞
+          </p>
+        </div>
       </div>
     </div>
 
     <div id="footer-wrapper">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer"></footer>
+      <footer id="footer__container" class="full-width">
+        <div
+          id="footer"
+          class="col-span-full t-col-span-5 l-col-span-4 xl-col-span-4"></div>
+      </footer>
     </div>
 
     <!-- JavaScript Area -->

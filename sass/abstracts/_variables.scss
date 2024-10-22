@@ -1,9 +1,18 @@
 @use "fonts";
 
 $black: #000000;
-$white: #ffffff;
-$sec-black: #999999;
+$white: #f2f3f4;
+$sec-black: #b6b6b6;
 $inter-font: "Inter";
 $base-font-size: 16px;
 $base-font-weight: 400;
 $base-line-height: 1.3;
+
+body {
+  background-color: $white;
+}
+
+.line-break {
+  border-top: 1px solid $sec-black;
+  margin: 32px 0;
+}
