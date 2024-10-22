@@ -1,0 +1,152 @@
+@use "../abstracts/" as a;
+
+#about-nate-wrapper {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+#about-nate__details {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+#about-nate__card {
+  display: flex;
+  place-items: center;
+  padding: 24px;
+  gap: 8px;
+  background-color: white;
+  width: 330px;
+  height: 150px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+}
+
+#about-nate__avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: coral;
+}
+
+#about-nate__tag {
+  h2 {
+    font-size: 1.35rem;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}
+
+#about-nate__text {
+  margin-top: 48px;
+  p {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 0.8rem;
+  }
+}
+
+#contact-box-wrapper {
+  margin-top: 48px;
+}
+
+#contact-box__container {
+  p {
+    text-align: center;
+  }
+}
+
+#chat__container {
+  button {
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 40px;
+    color: a.$white;
+    border-radius: 36px;
+    background: a.$black;
+    margin-top: 32px;
+    margin-bottom: 64px;
+  }
+}
+
+#about-nate__promise {
+  margin-top: 16px;
+}
+
+// Tablet Screen
+
+@media screen and (min-width: 768px) {
+  #about-nate__card {
+    gap: 16px;
+    background-color: white;
+    width: 420px;
+    height: 150px;
+  }
+
+  #about-nate__avatar {
+  }
+
+  #about-nate__tag {
+    h2 {
+      font-size: 1.35rem;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+
+  #about-nate__text {
+    margin-top: 48px;
+    grid-column-start: 2;
+    p {
+      text-align: left;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Desktop Screen
+
+@media screen and (min-width: 1024px) {
+  #about-nate-wrapper {
+    margin-top: 112px;
+  }
+  #about-nate__card {
+    gap: 16px;
+  }
+
+  #about-nate__avatar {
+  }
+
+  #about-nate__tag {
+    h2 {
+    }
+    h3 {
+    }
+  }
+
+  #about-nate__text {
+    margin-top: 32px;
+    grid-column-start: 4;
+    p {
+      text-align: left;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// XL Desktop Screen
+@media screen and (min-width: 1440px) {
+  #about-nate__text {
+    grid-column-start: 5;
+    p {
+      font-size: 1rem;
+    }
+  }
+}

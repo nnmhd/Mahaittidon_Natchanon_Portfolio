@@ -1,4 +1,8 @@
 (() => {
+  document.querySelector("#header__logo").addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+
   // Mobile Menu controller
   document
     .querySelector("#header__menu-button")
@@ -26,11 +30,15 @@
     });
   });
 
-  document
-    .querySelector("#project-details__lightbox-controller")
-    .addEventListener("click", () => {
+  const lightboxController = document.querySelector(
+    "#project-details__lightbox-controller"
+  );
+
+  if (lightboxController) {
+    lightboxController.addEventListener("click", () => {
       projectDetails.classList.add("hidden");
     });
+  }
 
   // Edge
 })();

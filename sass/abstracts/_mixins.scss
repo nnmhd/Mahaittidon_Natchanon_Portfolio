@@ -11,3 +11,8 @@
   transform: translateY(-100vh);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+.line-break {
+  border-top: 1px solid black;
+  margin: 32px 0;
+}

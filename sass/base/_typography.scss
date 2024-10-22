@@ -18,3 +18,10 @@ body {
 h1 {
   font-family: a.$inter-font;
 }
+
+.heading-text-grey {
+  color: a.$sec-black;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
+}

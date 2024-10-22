@@ -53,3 +53,14 @@ li,
 button {
   cursor: pointer;
 }
+
+.where {
+  border: solid 3px red;
+}
+
+// Tablet Screen (wider than 768px)
+@media screen and (min-width: 768px) {
+  .where {
+    border: solid 3px green;
+  }
+}
