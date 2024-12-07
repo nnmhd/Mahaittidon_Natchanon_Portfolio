@@ -10,6 +10,7 @@
     <title>Hi! I'm Nate 👋</title>
   </head>
   <body>
+    <div id="widthbox"></div>
     <h1 class="hidden">
       Hello everyone! Welcome to Nate's Space, Portfolio of Design and Code.
     </h1>
@@ -42,16 +43,16 @@
               <object data="images/add-sign.svg" type=""></object>
             </button>
           </div>
-          <div id="chat-box" class="col-span-full">
+          <div id="chat-box" class="col-span-full hidden">
             <h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
             <ul>
                 <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
+            <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
 
@@ -120,7 +121,7 @@
       <div id="showreel__container" class="full-width">
         <p id="showreel__chatbox"></p>
         <div id="showreel__video-container" class="col-span-full">
-          <video controls src="video/sky.mov"></video>
+          <video controls src="video/showreel.mp4"></video>
         </div>
       </div>
     </div>
@@ -133,21 +134,8 @@
             <div class="card__company"></div>
           </div>
           <div class="card__text">
-            <div class="card__testimonial-text"></div>
-            <div class="card__testimonial-cite"></div>
-          </div>
-        </div>
-
-        <div
-          id="for-show"
-          class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
-          <div class="card__client_company">
-            <div class="card__client"></div>
-            <div class="card__company"></div>
-          </div>
-          <div class="card__text">
-            <div class="card__testimonial-text"></div>
-            <div class="card__testimonial-cite"></div>
+            <div class="card__testimonial-text">A game-changer for my business.  The guidance and strategies provided by this team have transformed my business into a thriving success.</div>
+            <div class="card__testimonial-cite">Erin Korsgaard</div>
           </div>
         </div>
       </div>
