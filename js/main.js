@@ -9,6 +9,16 @@
   const cards = document.querySelectorAll(".hero__card");
   const cardBox = document.querySelector("#hero__card-deck");
 
+  function updateWidth() {
+    const width = window.innerWidth;
+    console.log(width);
+    document.querySelector("#widthbox").textContent = width;
+  }
+
+  updateWidth();
+
+  window.addEventListener("resize", updateWidth);
+
   // !GSAP of Box and Cards
   const screenSize = gsap.matchMedia();
   screenSize.add("(min-width: 768px)", () => {
@@ -47,7 +57,7 @@
   });
 
   // !GSAP Cards
-  screenSize.add("(min-width: 1281px) and (max-width: 1440px)", () => {
+  screenSize.add("(min-width: 1440px)", () => {
     gsap.fromTo(
       cards[0],
       { x: "108%", rotation: 3 },
@@ -316,6 +326,20 @@
         },
       }
     );
+  });
+
+  // To Chat
+  const chat = document.querySelector("#chat-box");
+  const chatboxBtn = document.querySelector("#chatboxBtn");
+  const chatboxBtnOpen = document.querySelector("#header__social-link");
+
+  chatboxBtnOpen.addEventListener("click", () => {
+    console.log("HEY!");
+    chat.classList.toggle("hidden");
+  });
+
+  chatboxBtn.addEventListener("click", () => {
+    chat.classList.toggle("hidden");
   });
 
   // Mobile Menu controller

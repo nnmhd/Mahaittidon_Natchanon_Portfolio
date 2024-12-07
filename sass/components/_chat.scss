@@ -1,6 +1,7 @@
 @use "../abstracts/" as a;
 
 #chat-box {
+  position: relative;
   width: clamp(300px, 40%, 800px);
   height: auto;
   margin: 0 auto;
@@ -8,16 +9,43 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 16px;
+  padding: 32px;
   z-index: 999;
   border-radius: 16px;
+  background-color: a.$black;
 
   h2 {
-    font-size: 5rem;
+    font-size: 3rem;
+    color: white;
+    line-height: 1;
   }
 
   p {
     color: a.$sec-black;
-    font-weight: 100;
+    font-weight: 200;
+    color: a.$sec-black;
+    margin-top: 16px;
   }
+
+  ul {
+    display: flex;
+    gap: 16px;
+    li {
+      padding: 16px 0;
+
+      i {
+        font-size: 1.5rem;
+        color: white;
+      }
+    }
+  }
+}
+
+#chatboxBtn {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  cursor: pointer;
 }
