@@ -1,6 +1,6 @@
 <?php
 require_once('connect.php');
-$query = "SELECT p.project_id, c.company_name, p. p.desc_brief, p.desc_headline, p.desc_tag, p.img_card, p.img_thumbnail FROM project AS p INNER JOIN clients AS c ON p.client_id = c.client_id";
+$query = "SELECT p.project_id, c.company_name, p.desc_subhead, p.desc_brief, p.desc_headline, p.desc_tag, p.img_card, p.img_thumbnail FROM project AS p INNER JOIN clients AS c ON p.client_id = c.client_id";
 $results = mysqli_query($connect,$query);
 
 if ($results->num_rows > 0) {

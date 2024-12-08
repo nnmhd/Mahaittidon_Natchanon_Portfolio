@@ -99,8 +99,6 @@
           </p>
         </div>
       </div>
-
-      <div id="chat__container"><button type="button">Chat</button></div>
       <p>Or</p>
 
       <div id="contact-box-wrapper">
@@ -111,17 +109,21 @@
             <h2 class="hidden">
               Connect Nate Easily Here! Let's Make Some Chat
             </h2>
-            <input
-              id="contact-message"
-              type="text"
-              placeholder="tell me a little about the project."
-              required />
-            <input
-              id="contact-email"
-              type="text"
-              placeholder="your@email"
-              required />
-            <button id="contact-submit" type="submit">Send</button>
+            <form method="post" action="includes/sendmail.php">
+              <input
+                id="contact-message"
+                name="message"
+                type="text"
+                placeholder="tell me a little about the project."
+                required />
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                placeholder="your@email"
+                required />
+              <button id="contact-submit" type="submit">Send</button>
+            </form>
           </section>
           <p id="about-nate__promise" class="col-span-full">
             I will reply in a day, promise 🤞

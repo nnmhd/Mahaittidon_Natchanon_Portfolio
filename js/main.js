@@ -10,11 +10,8 @@
       projectData = data;
       const heroDeck = document.querySelectorAll(".hero__card");
 
-      const projectClients = document.querySelector("#project-details__client");
-      const projectThumbnail = document.querySelector("#project-details__desc");
       heroDeck.forEach((card, index) => {
         card.addEventListener("mouseover", () => {
-          // create box with ID
           const projectName = document.querySelector(
             "#project-details__headline"
           );
@@ -33,15 +30,10 @@
 
   // To Chat
   const chat = document.querySelector("#chat-box");
-  const chatAbPg = document.querySelector("#chat__container");
   const chatboxBtn = document.querySelector("#chatboxBtn");
   const chatboxBtnOpen = document.querySelector("#header__social-link");
 
   chatboxBtnOpen.addEventListener("click", () => {
-    chat.classList.toggle("hidden");
-  });
-
-  chatAbPg.addEventListener("click", () => {
     chat.classList.toggle("hidden");
   });
 
@@ -68,23 +60,40 @@
   const projectDetails = document.querySelector(
     "#hero_project-detail__wrapper"
   );
-  namecards = document.querySelectorAll(".hero__card");
-  namecards.forEach((e) => {
-    if (window.innerWidth > 1024) {
-      e.addEventListener("mouseover", () => {
-        projectDetails.classList.remove("hidden");
-      });
+  const namecards = document.querySelectorAll(".hero__card");
 
-      e.addEventListener("mouseleave", () => {
-        projectDetails.classList.add("hidden");
+  function MouseOver() {
+    projectDetails.classList.remove("hidden");
+  }
+
+  function MouseLeave() {
+    projectDetails.classList.add("hidden");
+  }
+
+  function handleClick(e) {
+    e.preventDefault();
+    projectDetails.classList.remove("hidden");
+  }
+
+  function updateEventListeners() {
+    if (window.innerWidth >= 1024) {
+      namecards.forEach((e) => {
+        e.addEventListener("mouseover", MouseOver);
+        e.addEventListener("mouseleave", MouseLeave);
+        e.removeEventListener("click", handleClick);
       });
     } else {
-      e.addEventListener("click", () => {
-        event.preventDefault();
-        projectDetails.classList.remove("hidden");
+      namecards.forEach((e) => {
+        e.removeEventListener("mouseover", MouseOver);
+        e.removeEventListener("mouseleave", MouseLeave);
+        e.addEventListener("click", handleClick);
       });
     }
-  });
+  }
+
+  updateEventListeners();
+
+  window.addEventListener("resize", updateEventListeners);
 
   const lightboxController = document.querySelector(
     "#project-details__lightbox-controller"

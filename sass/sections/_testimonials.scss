@@ -25,21 +25,30 @@
 }
 
 .card__client {
-  background-color: red;
   width: 100px;
   height: 100%;
-  border-radius: 50px;
+
   aspect-ratio: 1/1;
+
+  img {
+    width: 100px;
+    height: 100%;
+    border-radius: 50px;
+  }
 }
 
 .card__company {
   position: absolute;
-  background-color: black;
   border-radius: 10px;
   width: 32px;
   height: 32px;
   bottom: -10px;
   right: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  img {
+    border-radius: 10px;
+  }
 }
 
 .card__text {
