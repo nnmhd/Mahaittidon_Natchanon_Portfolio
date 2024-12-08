@@ -245,7 +245,7 @@ while($row = mysqli_fetch_assoc($results)) {
 echo '
         <div class="other-project__card">
           <div class="other-project__image">
-            <a href="project.php?id='.$row['project_id'].'"><img src="#" alt="Project Image" /></a>
+            <a href="project.php?id='.$row['project_id'].'"><img src="images/'.$row['img_thumbnail'].'" alt="Project Image" /></a>
           </div>
           <div class="other-project__text">
             <div class="other-project__project-name">'.$row["company_name"].'</div>
