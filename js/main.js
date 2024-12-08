@@ -28,7 +28,6 @@
       });
     });
 
-  // To Chat
   const chat = document.querySelector("#chat-box");
   const chatboxBtn = document.querySelector("#chatboxBtn");
   const chatboxBtnOpen = document.querySelector("#header__social-link");
@@ -41,7 +40,6 @@
     chat.classList.toggle("hidden");
   });
 
-  // Mobile Menu controller
   document
     .querySelector("#header__menu-button")
     .addEventListener("click", () => {
@@ -54,8 +52,6 @@
         menu.classList.remove("show-menu");
       }
     });
-
-  // Hero Section; show project detail when click cards
 
   const projectDetails = document.querySelector(
     "#hero_project-detail__wrapper"

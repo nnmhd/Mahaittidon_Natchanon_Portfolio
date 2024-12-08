@@ -7,7 +7,6 @@
 
   random = Math.random() * 100;
 
-  // !GSAP of Box and Cards
   const screenSize = gsap.matchMedia();
   screenSize.add("(min-width: 768px)", () => {
     gsap.fromTo(
@@ -44,7 +43,6 @@
     );
   });
 
-  // !GSAP Cards
   screenSize.add("(min-width: 1440px)", () => {
     gsap.fromTo(
       cards[0],
