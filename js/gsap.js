@@ -5,13 +5,15 @@
   const cards = document.querySelectorAll(".hero__card");
   const cardBox = document.querySelector("#hero__card-deck");
 
+  random = Math.random() * 100;
+
   // !GSAP of Box and Cards
   const screenSize = gsap.matchMedia();
   screenSize.add("(min-width: 768px)", () => {
     gsap.fromTo(
       cardBox,
       {
-        y: "20%",
+        y: `"${random}"%`,
       },
       {
         y: "0%",
@@ -28,7 +30,7 @@
     gsap.fromTo(
       cardBox,
       {
-        y: "10%",
+        y: `"${random}"%`,
       },
       {
         y: "0%",

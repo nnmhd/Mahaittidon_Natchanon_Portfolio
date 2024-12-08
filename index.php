@@ -90,7 +90,7 @@ $results = mysqli_query($connect,$query);
 
         <section id="hero__card-deck" class="col-span-full">
         <?php
-$herocards = "SELECT project_id, p.img_card FROM `project` AS p LIMIT 6";
+$herocards = "SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 6";
 $result = mysqli_query($connect, $herocards);
 
 while($row = mysqli_fetch_assoc($result)) {
@@ -169,17 +169,21 @@ echo '
           id="contact-box__form"
           class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
           <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
+          <form method="post" action="includes/sendmail.php">
           <input
             id="contact-message"
+            name="message"
             type="text"
             placeholder="tell me a little about the project."
             required />
           <input
             id="contact-email"
-            type="text"
+                    name="email"
+            type="email"
             placeholder="your@email"
             required />
           <button id="contact-submit" type="submit">Send</button>
+          </form>
         </section>
       </div>
     </div>
