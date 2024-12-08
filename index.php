@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+require_once('includes/connect.php');
+$query = "SELECT p.project_id, c.company_name, p.desc_brief, p.desc_headline, p.desc_tag, p.img_card, p.img_thumbnail FROM project AS p INNER JOIN clients AS c ON p.client_id = c.client_id WHERE p.project_id = 2";
+$results = mysqli_query($connect,$query);
+?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +15,6 @@
     <title>Hi! I'm Nate 👋</title>
   </head>
   <body>
-    <div id="widthbox"></div>
     <h1 class="hidden">
       Hello everyone! Welcome to Nate's Space, Portfolio of Design and Code.
     </h1>
@@ -21,10 +25,10 @@
           <div
             id="header__logo"
             class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
-            <object
-              type="image/svg+xml"
-              data="images/Nate-logo.svg"
-              id="header__nate-logo"></object>
+            <img
+  src="images/Nate-logo.svg"
+  alt="Nate Logo"
+  id="header__nate-logo">
           </div>
           <div
             id="header__bio-text"
@@ -33,7 +37,7 @@
             id="header__nav"
             class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
-              <li><a id="portfolio-link" href="project.html">Works</a></li>
+              <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
               <li><a id="contact-link" href="about.html">Contact</a></li>
             </ul>
           </nav>
@@ -70,36 +74,38 @@
             <div id="project-details__image">
               <img src="#" alt="Project Image" />
             </div>
+           
             <div id="project-details">
               <h2 id="project-details__headline" class="col-span-1">
-                Project
-                <span id="project-details__sub-headline">w/ Subhead</span>
+
+                <span id="project-details__sub-headline"></span>
               </h2>
-              <p id="project-details__client" class="col-span-1">Mad Company</p>
+              <p id="project-details__client" class="col-span-1"></p>
               <p id="project-details__desc" class="col-span-1">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Possimus, laboriosam error pariatur veniam expedita consequatur
-                enim nobis et! Tempore quaerat repellat.
               </p>
               <a id="project-link" href="#">Go to project</a>
-            </div>
+</div>
           </section>
         </div>
 
         <section id="hero__card-deck" class="col-span-full">
-          <h2 class="hidden">
-            Pick Some That Catch Your Eyes, These are Some of Projects I Worked
-            With!
-          </h2>
-          <div id="card-deck__position1" class="hero__card">1</div>
-          <div id="card-deck__position2" class="hero__card">2</div>
-          <div id="card-deck__position3" class="hero__card">3</div>
-          <div id="card-deck__position4" class="hero__card">4</div>
-          <div id="card-deck__position5" class="hero__card">5</div>
-          <div id="card-deck__position6" class="hero__card">6</div>
-        </section>
-      </div>
-    </div>
+        <?php
+$herocards = "SELECT project_id, p.img_card FROM `project` AS p LIMIT 6";
+$result = mysqli_query($connect, $herocards);
+
+while($row = mysqli_fetch_assoc($result)) {
+echo '
+<a href="project.php?id='.$row['project_id'].'" class="hero__card">
+  <div id="card-deck__position1">
+    <img src="images/'.$row['img_card'].'" alt="Project Image '.$row['project_id'].'">
+  </div>
+</a>
+'
+;}
+?>
+        </div>
+        </div>
+      </section>
 
     <div id="stacks-wrapper">
       <h2 class="hidden">Nate's Stacks Section</h2>
@@ -121,23 +127,35 @@
       <div id="showreel__container" class="full-width">
         <p id="showreel__chatbox"></p>
         <div id="showreel__video-container" class="col-span-full">
-          <video controls src="video/showreel.mp4"></video>
+          <video controls src="video/showreel.mp4" poster="images/video-poster.png"></video>
         </div>
       </div>
     </div>
 
     <div id="testimonial-wrapper">
       <div id="testimonial__container" class="grid-con">
+
+      <?php
+$testimonial = "SELECT * FROM `testimonial` ORDER BY RAND() LIMIT 2";
+$result = mysqli_query($connect, $testimonial);
+
+while($row = mysqli_fetch_assoc($result)) {
+echo '
+
         <div class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
           <div class="card__client_company">
-            <div class="card__client"></div>
-            <div class="card__company"></div>
+            <div class="card__client"><img src="images/'.$row["img_cite"].'" alt=""></div>
+            <div class="card__company"><img src="images/'.$row["img_cite_company"].'" alt=""></div>
           </div>
           <div class="card__text">
-            <div class="card__testimonial-text">A game-changer for my business.  The guidance and strategies provided by this team have transformed my business into a thriving success.</div>
-            <div class="card__testimonial-cite">Erin Korsgaard</div>
+            <div class="card__testimonial-text">'.$row["cite_text"].'</div>
+            <div class="card__testimonial-cite">'.$row["cite_name"].'</div>
           </div>
         </div>
+'
+;}
+?>
+
       </div>
     </div>
 
@@ -177,10 +195,11 @@
 
     <!-- JavaScript Area -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/gsap.js"></script>
     <script src="js/text.js"></script>
   </body>
 </html>

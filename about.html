@@ -22,10 +22,10 @@
           <div
             id="header__logo"
             class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
-            <object
-              type="image/svg+xml"
-              data="images/Nate-logo.svg"
-              id="header__nate-logo"></object>
+            <img
+              src="images/Nate-logo.svg"
+              alt="Nate Logo"
+              id="header__nate-logo" />
           </div>
           <div
             id="header__bio-text"
@@ -34,7 +34,7 @@
             id="header__nav"
             class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
-              <li><a id="portfolio-link" href="project.html">Works</a></li>
+              <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
               <li><a id="contact-link" href="about.html">Contact</a></li>
             </ul>
           </nav>
@@ -43,6 +43,25 @@
             <button id="social-link__btn">
               <object data="images/add-sign.svg" type=""></object>
             </button>
+          </div>
+          <div id="chat-box" class="col-span-full hidden">
+            <h2>Let's Connect!</h2>
+            <p>I'm waiting you somewhere in the world 🌎</p>
+            <ul>
+              <li>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-brands fa-square-behance"></i></a>
+              </li>
+            </ul>
+            <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
       </header>
