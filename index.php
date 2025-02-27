@@ -2,8 +2,8 @@
 <html lang="en">
 <?php
 require_once('includes/connect.php');
-$query = "SELECT p.project_id, c.company_name, p.desc_brief, p.desc_headline, p.desc_tag, p.img_card, p.img_thumbnail FROM project AS p INNER JOIN clients AS c ON p.client_id = c.client_id WHERE p.project_id = 2";
-$results = mysqli_query($connect,$query);
+$stmt = $connect->prepare("SELECT p.project_id, c.company_name, p.desc_brief, p.desc_headline, p.desc_tag, p.img_card, p.img_thumbnail FROM project AS p INNER JOIN clients AS c ON p.client_id = c.client_id WHERE p.project_id = 2");
+$stmt->execute();
 ?>
   <head>
     <meta charset="UTF-8" />
@@ -90,10 +90,11 @@ $results = mysqli_query($connect,$query);
 
         <section id="hero__card-deck" class="col-span-full">
         <?php
-$herocards = "SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 6";
-$result = mysqli_query($connect, $herocards);
-
-while($row = mysqli_fetch_assoc($result)) {
+$herocards = 'SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 6';
+$stmt = $connect->prepare($herocards);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 echo '
 <a href="project.php?id='.$row['project_id'].'" class="hero__card">
   <div id="card-deck__position1">
@@ -136,12 +137,12 @@ echo '
       <div id="testimonial__container" class="grid-con">
 
       <?php
-$testimonial = "SELECT * FROM `testimonial` ORDER BY RAND() LIMIT 2";
-$result = mysqli_query($connect, $testimonial);
-
-while($row = mysqli_fetch_assoc($result)) {
+$testimonial = 'SELECT * FROM `testimonial` ORDER BY RAND() LIMIT 2';
+$stmt = $connect->prepare($testimonial);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 echo '
-
         <div class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
           <div class="card__client_company">
             <div class="card__client"><img src="images/'.$row["img_cite"].'" alt=""></div>
@@ -155,10 +156,8 @@ echo '
 '
 ;}
 ?>
-
       </div>
     </div>
-
     <div id="contact-box-wrapper">
       <div id="contact-box__container" class="grid-con">
         <p class="col-span-full">

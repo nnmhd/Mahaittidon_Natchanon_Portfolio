@@ -2,15 +2,19 @@
 <html lang="en">
   <?php
 require_once('includes/connect.php');
-$query = "SELECT 
+$sql = 'SELECT
             p.*, 
             c.company_name 
           FROM project AS p 
           INNER JOIN clients AS c 
           ON p.client_id = c.client_id 
-          WHERE p.project_id = " . intval($_GET['id']);
-$results = mysqli_query($connect, $query);
-  ?>
+          WHERE p.project_id = :projectid';
+$stmt = $connect->prepare($sql);
+$projectid = $_GET['id'];
+$stmt->bindParam(':projectid', $projectid, PDO::PARAM_INT);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
 
   <head>
     <meta charset="UTF-8" />
@@ -78,8 +82,7 @@ $results = mysqli_query($connect, $query);
           <h2 class="hidden">The Project main highlight</h2>
 
 <?php
-
-while($row = mysqli_fetch_assoc($results)) {
+if ($row) {
 echo '
 <!-- Project Image -->
 <div id="hero__image-containter" class="col-span-full">
@@ -211,20 +214,15 @@ echo '
 </section>
 </div>
 </div>
-'
-;}
+';
+} $stmt = null;
 ?>
-          
-
     <div class="line-break full-width"></div>
-
     <div
       id="other-project-wrapper"
       class="col-span-full grid-container-fullwidth">
       <h2 class="hidden">The Other Projects that I proud to present too!</h2>
       <div id="other-project__containter" class="col-span-full">
-
-
       <?php
 
 $ad = "SELECT 
@@ -240,8 +238,11 @@ ON
   p.client_id = c.client_id 
 ORDER BY RAND() 
 LIMIT 3;";
-$results = mysqli_query($connect, $ad);
-while($row = mysqli_fetch_assoc($results)) {
+
+$stmt = $connect->prepare($ad);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 echo '
         <div class="other-project__card">
           <div class="other-project__image">
@@ -255,7 +256,7 @@ echo '
           </div>
         </div>
 '
-;}
+;} $stmt = null;
 ?>
 
       </div>

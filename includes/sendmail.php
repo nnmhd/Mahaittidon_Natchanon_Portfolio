@@ -17,30 +17,29 @@ if (empty($email)) {
 }
 
 if (empty($errors)) {
-    $email = mysqli_real_escape_string($connect, $email);
-    $message = mysqli_real_escape_string($connect, $message);
-    $current_date = date('Y-m-d');
-
-    $query = "INSERT INTO contacts (email, message, contact_date) VALUES ('$email', '$message', '$current_date')";
-
-    if (mysqli_query($connect, $query)) {
-        $to = 'n_mahaittidon225270@fanshaweonline.ca';
-        $subject = 'Message from your Portfolio site!';
-        $form_message = "You have received a new contact form submission:\n\n";
-        $form_message .= $message . "\n\n";
-        $form_message .= "From: " . $email . "\n\n";
-
-        mail($to, $subject, $form_message);
-        
-        header('Location: thank_you.php');
-        exit();
-    } else {
-        echo "Error: " . mysqli_error($connect);
+    try {
+        $query = "INSERT INTO contacts (email, message, contact_date) VALUES (:email, :message, NOW())";
+        $stmt = $connect->prepare($query);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':message', $message, PDO::PARAM_STR);
+        if ($stmt->execute()) {
+            $to = 'n_mahaittidon225270@fanshaweonline.ca';
+            $subject = 'Message from your Portfolio site!';
+            $form_message = "You have received a new contact form submission:\n\n";
+            $form_message .= $message . "\n\n";
+            $form_message .= "From: " . $email . "\n\n";
+            mail($to, $subject, $form_message);
+            header('Location: thank_you.php');
+        } else {
+            echo 'Unfortunately, the message could not be sent. Please try again later.';
+        }
+    } catch (PDOException $e) {
+        error_log($e->getMessage());
+        exit('Something went wrong. Please try again later.');
     }
 } else {
     foreach ($errors as $field => $error) {
         echo "<p>$field: $error</p>";
     }
 }
-
 ?>
