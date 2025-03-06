@@ -1,41 +1,45 @@
+<?php 
+// call the connect.php file 
+// and create a connection 
+// and query the database and fetch the data
+require_once('includes/connect.php');
+$sql = "SELECT p.project_id, c.company_name FROM project AS p 
+        INNER JOIN clients AS c ON p.client_id = c.client_id";
+$stmt = $connect->prepare($sql);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<?php
-require_once('includes/connect.php');
-$stmt = $connect->prepare("SELECT p.project_id, c.company_name, p.desc_brief, p.desc_headline, p.desc_tag, p.img_card, p.img_thumbnail FROM project AS p INNER JOIN clients AS c ON p.client_id = c.client_id WHERE p.project_id = 2");
-$stmt->execute();
-?>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
+    <script defer
       src="https://kit.fontawesome.com/97e2f7a12f.js"
       crossorigin="anonymous"></script>
+      <script defer type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Hi! I'm Nate 👋</title>
   </head>
   <body>
     <h1 class="hidden">
-      Hello everyone! Welcome to Nate's Space, Portfolio of Design and Code.
+      Hello everyone! Welcome to Nate's Space, Portfolio of Design and Code. Discover my projects, skills, and experience in web development and design.
     </h1>
     <div id="header-wrapper">
-      <h2 class="hidden">Nate's Portfolio Header Section</h2>
+      <h2 class="hidden">Welcome to Nate's Portfolio - Web Development and Design Projects</h2>
       <header id="header">
         <div id="header__container" class="grid-con">
           <div
             id="header__logo"
             class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
             <img
-  src="images/Nate-logo.svg"
-  alt="Nate Logo"
-  id="header__nate-logo">
+              src="images/Nate-logo.svg"
+              alt="Nate Logo"
+              id="header__nate-logo">
           </div>
-          <div
-            id="header__bio-text"
-            class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
-          <nav
-            id="header__nav"
-            class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
+          <div id="header__bio-text" class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
+          <nav id="header__nav" class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
               <li><a id="contact-link" href="about.html">Contact</a></li>
@@ -59,52 +63,61 @@ $stmt->execute();
             <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
-
       </header>
     </div>
 
     <div id="hero-wrapper">
-      <h2 class="hidden">Nate's Portfolio Hero Section</h2>
+      <h2 class="hidden">Nate's Portfolio Hero Section - Showcasing Top Projects and Designs</h2>
       <div id="hero__container" class="full-width">
-        <div id="hero_project-detail__wrapper" class="col-span-full hidden">
+        <div id="hero_project-detail__wrapper" class="col-span-full">
+          <!-- Start of Project Detail Box -->
+          <?php
+          $projects = 'SELECT p.project_id, p.project_name, p.desc_headline, p.img_thumbnail, p.desc_brief, p.desc_subhead, c.company_name FROM project AS p
+          INNER JOIN clients AS c ON p.client_id = c.client_id LIMIT 1';
+          $stmt = $connect->prepare($projects);
+          $stmt->execute();
+          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          echo ''
+          ;}
+          ?>
           <section id="hero__project-details">
             <button id="project-details__lightbox-controller">
               <i class="fa-thin fa-x"></i>
             </button>
             <div id="project-details__image">
-              <img src="#" alt="Project Image" />
+              <img src="" alt="Project Image" />
             </div>
            
             <div id="project-details">
-              <h2 id="project-details__headline" class="col-span-1">
-
-                <span id="project-details__sub-headline"></span>
+              <h2 id="project-details__headline" class="col-span-1"><span id="project-details__sub-headline"></span>
               </h2>
               <p id="project-details__client" class="col-span-1"></p>
               <p id="project-details__desc" class="col-span-1">
               </p>
               <a id="project-link" href="#">Go to project</a>
-</div>
+            </div>
           </section>
         </div>
-
+          
+        <!-- End of Project Detail Box -->
+        
+        <!-- Start Section Cards Deck -->
         <section id="hero__card-deck" class="col-span-full">
         <?php
-$herocards = 'SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 6';
-$stmt = $connect->prepare($herocards);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-echo '
-<a href="project.php?id='.$row['project_id'].'" class="hero__card">
-  <div id="card-deck__position1">
-    <img src="images/'.$row['img_card'].'" alt="Project Image '.$row['project_id'].'">
-  </div>
-</a>
-'
-;}
-?>
-        </div>
+        $herocards = 'SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 7';
+        $stmt = $connect->prepare($herocards);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo '
+        <a href="project.php?id='.$row['project_id'].'" class="hero__card" data-id='.$row['project_id'].'>
+          <div id="card-deck__position1">
+            <img src="images/'.$row['img_card'].'" alt="Project Image '.$row['project_id'].'">
+          </div>
+        </a>
+        '
+        ;}
+        ?></div>
         </div>
       </section>
 
@@ -140,7 +153,6 @@ echo '
 $testimonial = 'SELECT * FROM `testimonial` ORDER BY RAND() LIMIT 2';
 $stmt = $connect->prepare($testimonial);
 $stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 echo '
         <div class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
@@ -168,7 +180,7 @@ echo '
           id="contact-box__form"
           class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
           <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
-          <form method="post" action="includes/sendmail.php">
+          <form id="contact-form" method="post" action="includes/sendmail.php">
           <input
             id="contact-message"
             name="message"
@@ -177,13 +189,15 @@ echo '
             required />
           <input
             id="contact-email"
-                    name="email"
+            name="email"
             type="email"
             placeholder="your@email"
             required />
           <button id="contact-submit" type="submit">Send</button>
           </form>
+          <div id="feedback"><p></p></div>
         </section>
+
       </div>
     </div>
 
@@ -196,11 +210,10 @@ echo '
       </footer>
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/gsap.js"></script>
-    <script src="js/text.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script defer src="js/gsap.js"></script>
+    <script defer src="js/text.js"></script>
   </body>
 </html>
