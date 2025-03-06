@@ -1,11 +1,13 @@
 @use "../abstracts/" as a;
 
 #hero-wrapper {
+  border: 1px solid red;
 }
 
 #hero_project-detail__wrapper {
   position: relative;
   z-index: 999;
+  border: 1px solid red;
 }
 
 #hero__project-details {
@@ -73,6 +75,7 @@
 
 // !Hero Card deck
 #hero__card-deck {
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -154,27 +157,20 @@
     }
   }
   #project-details__lightbox-controller {
-    display: none;
+    // display: none;
   }
 
   #project-link {
-    display: none;
+    // display: none;
   }
 
   #project-details__image {
-    display: none;
-  }
-
-  #project-details__image {
-    position: absolute;
-    top: 120px;
     width: clamp(42%, 45%, 47%);
     height: 200px;
   }
 
   #project-details {
     width: 100%;
-    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
@@ -185,8 +181,7 @@
   }
 
   #project-details__desc {
-    position: absolute;
-    grid-column-start: 2;
+    background-color: red;
   }
 
   //!Hero Cards

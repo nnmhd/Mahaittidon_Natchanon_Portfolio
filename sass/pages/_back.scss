@@ -1,0 +1,231 @@
+#login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  place-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  input {
+    border: 1px solid #ccc;
+    height: 48px;
+    margin: 8px 0;
+  }
+
+  button {
+    background-color: #007bff;
+    width: 100%;
+    height: 52px;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+}
+
+#project-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 64px;
+  width: minmax(300px, 600px);
+  height: 100vh;
+  justify-content: center;
+  button {
+    background-color: #007bff;
+    width: 100%;
+    height: 52px;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #create__logout__box {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  #createBtn {
+    width: 200px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+
+  table {
+    background-color: white;
+    border: 1px solid black;
+    padding: 16px 16px;
+  }
+
+  .actionsBox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    a {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}
+
+#edit-form {
+  a:hover {
+    color: #007bff;
+  }
+  padding: 64px 0;
+  table {
+    border: 1px solid black;
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    padding: 64px;
+    tr {
+      td:first-child {
+        padding: 8px 16px 8px 0;
+      }
+      textarea {
+        padding: 8px 16px;
+        height: 100px;
+        border: 1px solid black;
+        color: gray;
+        background-color: white;
+      }
+    }
+    input {
+      border: 1px solid black;
+      background-color: white;
+      color: gray;
+      padding: 8px 16px;
+      height: 50px;
+    }
+
+    input:focus {
+      background-color: #007bff;
+      color: white;
+    }
+
+    input[type="file"] {
+      border: none;
+      background: none;
+    }
+  }
+
+  select {
+    border: 1px solid black;
+    color: gray;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    padding: 8px 16px;
+    background-color: white;
+  }
+
+  img {
+    width: 150px;
+    margin: 8px 0;
+  }
+}
+
+#updateBtn {
+  a:hover {
+    color: #007bff;
+  }
+  td {
+    padding: 16px 0;
+    input {
+      background-color: #007bff;
+      width: 100%;
+      height: 52px;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  }
+}
+
+#create-form {
+  padding: 64px 0;
+  table {
+    border: 1px solid black;
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    padding: 64px;
+    tr {
+      td:first-child {
+        padding: 8px 16px 8px 0;
+      }
+      textarea {
+        padding: 8px 16px;
+        height: 100px;
+        border: 1px solid black;
+        color: gray;
+        background-color: white;
+      }
+    }
+    input {
+      border: 1px solid black;
+      background-color: white;
+      color: gray;
+      padding: 8px 16px;
+      height: 50px;
+    }
+
+    input:focus {
+      background-color: #007bff;
+      color: white;
+    }
+
+    input[type="file"] {
+      border: none;
+      background: none;
+    }
+  }
+
+  select {
+    border: 1px solid black;
+    color: gray;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    padding: 8px 16px;
+    background-color: white;
+  }
+
+  img {
+    width: 150px;
+    margin: 8px 0;
+  }
+}
+
+#updateBtn,
+#createBtn {
+  td {
+    padding: 16px 0;
+    input {
+      background-color: #007bff;
+      width: 100%;
+      height: 52px;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    input:hover {
+      background-color: #0056b3;
+    }
+  }
+}
