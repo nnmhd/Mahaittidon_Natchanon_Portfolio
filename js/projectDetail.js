@@ -4,6 +4,7 @@ export function projectDetail() {
     .then((response) => response.json())
     .then((data) => {
       projectData = data;
+      console.log(projectData);
       document.querySelectorAll(".hero__card").forEach((card) => {
         card.addEventListener("mouseover", () => {
           const projectId = card.getAttribute("data-id");
@@ -13,8 +14,10 @@ export function projectDetail() {
               "#project-details__image img"
             ).src = `images/${project.img_thumbnail}`;
             project.img_thumbnail;
-            document.querySelector("#project-details__headline").textContent =
-              project.desc_headline;
+            document.querySelector(
+              "#project-details__headline"
+            ).innerHTML = `${project.desc_headline} <span id="project-details__sub-headline">${project.desc_subhead}</span>`;
+
             document.querySelector("#project-details__client").textContent =
               project.company_name;
             document.querySelector("#project-details__desc").textContent =
