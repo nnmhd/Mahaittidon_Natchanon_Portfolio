@@ -1,25 +1,37 @@
-(() => {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(ScrollToPlugin);
-
+export function runGSAP() {
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   const cards = document.querySelectorAll(".hero__card");
   const cardBox = document.querySelector("#hero__card-deck");
   const projectDetails = document.querySelector("#hero__project-details");
 
   gsap.fromTo(
     projectDetails,
-    { autoAlpha: 0 },
+    { y: "-100vh" },
     {
-      autoAlpha: 1,
+      y: "0%",
       duration: 0.5,
+      ease: "power2.inOut",
       scrollTrigger: {
-        scroller: window,
-        trigger: "body",
-        start: "top 20px",
-        end: "top 30px",
-        toggleActions: "play none none none",
+        start: "top 30px",
+        end: "top 40px",
+        toggleActions: "play none none reverse",
         markers: true,
-        scrub: false,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    cardBox,
+    { height: "0%" },
+    {
+      height: "80%",
+      duration: 0.5,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        start: "top 30px",
+        end: "top 40px",
+        toggleActions: "play none none reverse",
+        markers: true,
       },
     }
   );
@@ -37,7 +49,7 @@
           start: "10px",
           end: "30px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -54,7 +66,7 @@
           start: "10px",
           end: "30px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -82,7 +94,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -97,7 +109,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -112,7 +124,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -128,7 +140,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -143,7 +155,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -159,7 +171,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -177,7 +189,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -192,7 +204,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -209,7 +221,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -225,7 +237,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -241,7 +253,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -257,7 +269,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -275,7 +287,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -290,7 +302,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -305,7 +317,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -320,7 +332,7 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -335,9 +347,9 @@
           start: "10px",
           end: "50px",
           scrub: false,
-          markers: true,
+          toggleActions: "play none none reverse",
         },
       }
     );
   });
-})();
+}
