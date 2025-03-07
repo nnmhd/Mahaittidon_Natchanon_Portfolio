@@ -33,14 +33,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <h2 class="hidden">Nate's Portfolio Header Section</h2>
       <header id="header">
         <div id="header__container" class="grid-con">
-          <div
+        <div
             id="header__logo"
             class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
-            <img
-  src="images/Nate-logo.svg"
-  alt="Nate Logo"
-  id="header__nate-logo">
-          </div>
+            <a href="index.php">
+              <img
+              src="images/Nate-logo.svg"
+              alt="Nate Logo"
+              id="header__nate-logo">
+            </a>
+            </div>
           <div
             id="header__bio-text"
             class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
@@ -49,7 +51,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
-              <li><a id="contact-link" href="about.html">Contact</a></li>
+              <li><a id="contact-link" href="about.php">Contact</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>

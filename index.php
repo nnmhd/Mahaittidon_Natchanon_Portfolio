@@ -30,19 +30,21 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <h2 class="hidden">Welcome to Nate's Portfolio - Web Development and Design Projects</h2>
       <header id="header">
         <div id="header__container" class="grid-con">
-          <div
+            <div
             id="header__logo"
             class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
-            <img
+            <a href="index.php">
+              <img
               src="images/Nate-logo.svg"
               alt="Nate Logo"
               id="header__nate-logo">
-          </div>
+            </a>
+            </div>
           <div id="header__bio-text" class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
           <nav id="header__nav" class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
-              <li><a id="contact-link" href="about.html">Contact</a></li>
+              <li><a id="contact-link" href="about.php">Contact</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>
@@ -211,10 +213,8 @@ echo '
       </footer>
     </div>
 
-    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script defer src="js/gsap.js"></script>
-    <script defer src="js/text.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
   </body>
 </html>
