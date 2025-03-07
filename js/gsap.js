@@ -4,15 +4,32 @@
 
   const cards = document.querySelectorAll(".hero__card");
   const cardBox = document.querySelector("#hero__card-deck");
+  const projectDetails = document.querySelector("#hero__project-details");
 
-  random = Math.random() * 100;
+  gsap.fromTo(
+    projectDetails,
+    { autoAlpha: 0 },
+    {
+      autoAlpha: 1,
+      duration: 0.5,
+      scrollTrigger: {
+        scroller: window,
+        trigger: "body",
+        start: "top 20px",
+        end: "top 30px",
+        toggleActions: "play none none none",
+        markers: true,
+        scrub: false,
+      },
+    }
+  );
 
   const screenSize = gsap.matchMedia();
   screenSize.add("(min-width: 768px)", () => {
     gsap.fromTo(
       cardBox,
       {
-        y: `"${random}"%`,
+        y: ``,
       },
       {
         y: "0%",
@@ -43,7 +60,17 @@
     );
   });
 
-  screenSize.add("(min-width: 1440px)", () => {
+  screenSize.add("(min-width: 1024px)", () => {
+    // !add animations for each project detail box
+    gsap.to(projectDetails, {
+      autoAlpha: 1,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: projectDetails,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
     gsap.fromTo(
       cards[0],
       { x: "108%", rotation: 3 },

@@ -84,11 +84,12 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <button id="project-details__lightbox-controller">
               <i class="fa-thin fa-x"></i>
             </button>
+
+           
+            <div id="project-details" class="grid-con">
             <div id="project-details__image">
               <img src="" alt="Project Image" />
             </div>
-           
-            <div id="project-details">
               <h2 id="project-details__headline" class="col-span-1"><span id="project-details__sub-headline"></span>
               </h2>
               <p id="project-details__client" class="col-span-1"></p>
@@ -104,7 +105,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Start Section Cards Deck -->
         <section id="hero__card-deck" class="col-span-full">
         <?php
-        $herocards = 'SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 7';
+        $herocards = 'SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 4';
         $stmt = $connect->prepare($herocards);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
