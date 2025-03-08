@@ -2,7 +2,6 @@ function MouseOver() {
   const projectDetails = document.querySelector(
     "#hero_project-detail__wrapper"
   );
-  projectDetails.classList.remove("hidden");
 }
 
 export function updateEventListeners() {

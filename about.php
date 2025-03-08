@@ -41,7 +41,7 @@ require_once('includes/connect.php');
             id="header__nav"
             class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
-              <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
+              <li><a id="portfolio-link" href="works.php">Works</a></li>
               <li><a id="contact-link" href="about.php">Contact</a></li>
             </ul>
           </nav>
