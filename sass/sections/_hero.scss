@@ -60,7 +60,6 @@
   margin-top: 32px;
   font-size: 0.75rem;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -146,9 +145,7 @@
   }
 }
 
-// Desktop Screen
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
   #hero__project-details {
     height: auto;
     width: 100%;
@@ -212,11 +209,165 @@
     width: 100%;
     margin-top: 240px;
     row-gap: 36px;
+    background-color: red;
   }
 
   .hero__card {
-    width: 350px;
+    width: 200px;
     height: auto;
-    flex: 0 1 350px;
+    flex: 0 1 300px;
+  }
+}
+
+// Desktop Screen
+
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  #hero__project-details {
+    height: auto;
+    width: 100%;
+  }
+
+  #project-details__lightbox-controller {
+    display: none;
+  }
+
+  #project-link {
+    display: none;
+  }
+
+  #project-details__image {
+    width: 400px;
+    height: 100%;
+    grid-row: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #project-details__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #project-details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+
+  #project-details__headline {
+    grid-column-start: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+  #project-details__client {
+    grid-column-start: 2;
+  }
+
+  #project-details__desc {
+    grid-column-start: 2;
+  }
+
+  //!Hero Cards
+  #hero__card-deck {
+    width: 100%;
+    margin-top: 240px;
+    row-gap: 36px;
+    background-color: red;
+  }
+
+  .hero__card {
+    width: 200px;
+    height: auto;
+    flex: 0 1 300px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #hero__container {
+    width: 100%;
+    height: 70vh;
+  }
+  #hero_project-detail__wrapper {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #hero__project-details {
+    height: auto;
+    width: 100%;
+  }
+
+  #project-details__lightbox-controller {
+    display: none;
+  }
+
+  #project-link {
+    display: none;
+  }
+
+  #project-details__image {
+    width: 500px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    grid-row: span 3;
+  }
+
+  #project-details__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #project-details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+
+  #project-details__headline {
+    grid-column-start: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+  #project-details__client {
+    grid-column-start: 2;
+  }
+
+  #project-details__desc {
+    grid-column-start: 2;
+  }
+
+  #hero__card-deck {
+    width: 100%;
+    margin-top: 240px;
+    row-gap: 36px;
+  }
+
+  .hero__card {
+    width: 200px;
+    height: auto;
+    flex: 0 1 300px;
   }
 }

@@ -35,7 +35,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
             <a href="index.php">
               <img
-              src="images/Nate-logo.svg"
+              src="images/Nate-Logo.svg"
               alt="Nate Logo"
               id="header__nate-logo">
             </a>
@@ -91,16 +91,16 @@ $firstCard = $cards[1];
                     <i class="fa-thin fa-x"></i>
                 </button>
 
-                <div id="project-details" class="grid-con">
-                    <div id="project-details__image">
+                <div id="project-details" class="col-span-full">
+                    <div id="project-details__image" class="">
                         <img src="images/<?php echo $firstCard['img_thumbnail']; ?>" alt="<?php echo $firstCard['project_name']; ?>" />
                     </div>
                     <h2 id="project-details__headline" class="col-span-1">
                         <?php echo $firstCard['desc_headline']; ?>
                         <span id="project-details__sub-headline"><?php echo $firstCard['desc_subhead']; ?></span>
                     </h2>
-                    <p id="project-details__client" class="col-span-1"><?php echo $firstCard['company_name']; ?></p>
-                    <p id="project-details__desc" class="col-span-1">
+                    <p id="project-details__client" class="col-span-1 "><?php echo $firstCard['company_name']; ?></p>
+                    <p id="project-details__desc" class="col-span-1 ">
                         <?php echo $firstCard['desc_brief']; ?>
                     </p>
                     <a id="project-link" href="project.php?id=<?php echo $firstCard['project_id']; ?>">Go to project</a>
