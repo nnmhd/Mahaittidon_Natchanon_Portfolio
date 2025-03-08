@@ -3,6 +3,9 @@ export function runGSAP() {
   const cards = document.querySelectorAll(".hero__card");
   const cardBox = document.querySelector("#hero__card-deck");
   const projectDetails = document.querySelector("#hero__project-details");
+  const videoContainer = document.querySelector("#showreel__container");
+  const video = document.querySelector("#showreel__video-container");
+  const stacks = document.querySelector("#stacks");
 
   gsap.fromTo(
     projectDetails,
@@ -24,13 +27,49 @@ export function runGSAP() {
     cardBox,
     { height: "0%" },
     {
-      height: "80%",
+      height: "90%",
       duration: 0.5,
       ease: "power2.inOut",
       scrollTrigger: {
         start: "top 30px",
         end: "top 40px",
         toggleActions: "play none none reverse",
+        markers: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    videoContainer,
+    { width: "100%", height: "250px" },
+    {
+      width: "100%",
+      height: "80vh",
+      duration: 0.5,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: stacks,
+        start: "top 30%",
+        end: "top 50%",
+        toggleActions: "play none reverse none",
+        markers: true,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    video,
+    { width: "40%", height: "300px" },
+    {
+      width: "100%",
+      height: "80vh",
+      duration: 0.5,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: stacks,
+        start: "top 30%",
+        end: "top 50%",
+        toggleActions: "play none reverse none",
         markers: true,
       },
     }

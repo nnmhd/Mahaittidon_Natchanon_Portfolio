@@ -43,7 +43,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div id="header__bio-text" class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
           <nav id="header__nav" class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
             <ul>
-              <li><a id="portfolio-link" href="project.php?id=1">Works</a></li>
+              <li><a id="portfolio-link" href="works.php">Works</a></li>
               <li><a id="contact-link" href="about.php">Contact</a></li>
             </ul>
           </nav>
@@ -68,61 +68,61 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </header>
     </div>
 
-    <div id="hero-wrapper">
-      <h2 class="hidden">Nate's Portfolio Hero Section - Showcasing Top Projects and Designs</h2>
-      <div id="hero__container" class="full-width">
-        <div id="hero_project-detail__wrapper" class="col-span-full">
-          <!-- Start of Project Detail Box -->
-          <?php
-          $projects = 'SELECT p.project_id, p.project_name, p.desc_headline, p.img_thumbnail, p.desc_brief, p.desc_subhead, c.company_name FROM project AS p
-          INNER JOIN clients AS c ON p.client_id = c.client_id LIMIT 1';
-          $stmt = $connect->prepare($projects);
-          $stmt->execute();
-          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          echo ''
-          ;}
-          ?>
-          <section id="hero__project-details">
-            <button id="project-details__lightbox-controller">
-              <i class="fa-thin fa-x"></i>
-            </button>
+    <?php
+$projects = 'SELECT p.project_id, p.project_name, p.desc_headline, p.img_thumbnail, 
+                    p.desc_brief, p.desc_subhead, c.company_name, p.img_card 
+             FROM project AS p
+             INNER JOIN clients AS c ON p.client_id = c.client_id 
+             ORDER BY RAND() LIMIT 3';
+$stmt = $connect->prepare($projects);
+$stmt->execute();
+$cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-           
-            <div id="project-details" class="grid-con">
-            <div id="project-details__image">
-              <img src="" alt="Project Image" />
-            </div>
-              <h2 id="project-details__headline" class="col-span-1"><span id="project-details__sub-headline"></span>
-              </h2>
-              <p id="project-details__client" class="col-span-1"></p>
-              <p id="project-details__desc" class="col-span-1">
-              </p>
-              <a id="project-link" href="#">Go to project</a>
-            </div>
-          </section>
+
+$firstCard = $cards[1];
+?>
+
+<div id="hero-wrapper">
+    <h2 class="hidden">Nate's Portfolio Hero Section - Showcasing Top Projects and Designs</h2>
+    <div id="hero__container" class="full-width">
+        <div id="hero_project-detail__wrapper" class="col-span-full">
+            <section id="hero__project-details">
+                <button id="project-details__lightbox-controller">
+                    <i class="fa-thin fa-x"></i>
+                </button>
+
+                <div id="project-details" class="grid-con">
+                    <div id="project-details__image">
+                        <img src="images/<?php echo $firstCard['img_thumbnail']; ?>" alt="<?php echo $firstCard['project_name']; ?>" />
+                    </div>
+                    <h2 id="project-details__headline" class="col-span-1">
+                        <?php echo $firstCard['desc_headline']; ?>
+                        <span id="project-details__sub-headline"><?php echo $firstCard['desc_subhead']; ?></span>
+                    </h2>
+                    <p id="project-details__client" class="col-span-1"><?php echo $firstCard['company_name']; ?></p>
+                    <p id="project-details__desc" class="col-span-1">
+                        <?php echo $firstCard['desc_brief']; ?>
+                    </p>
+                    <a id="project-link" href="project.php?id=<?php echo $firstCard['project_id']; ?>">Go to project</a>
+                </div>
+            </section>
         </div>
-          
-        <!-- End of Project Detail Box -->
-        
-        <!-- Start Section Cards Deck -->
+
         <section id="hero__card-deck" class="col-span-full">
-        <?php
-        $herocards = 'SELECT project_id, p.img_card FROM `project` AS p ORDER BY RAND() LIMIT 4';
-        $stmt = $connect->prepare($herocards);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo '
-        <a href="project.php?id='.$row['project_id'].'" class="hero__card" data-id='.$row['project_id'].'>
-          <div id="card-deck__position1">
-            <img src="images/'.$row['img_card'].'" alt="Project Image '.$row['project_id'].'">
-          </div>
-        </a>
-        '
-        ;}
-        ?></div>
-        </div>
-      </section>
+            <?php
+            foreach ($cards as $row) {
+                echo '
+                <a href="project.php?id='.$row['project_id'].'" class="hero__card'.($row['project_id'] == $firstCard['project_id'] ? ' first' : '').'" data-id="'.$row['project_id'].'">
+                    <div class="card-deck__position">
+                        <img src="images/'.$row['img_card'].'" alt="'.$row['project_name'].'">
+                    </div>
+                </a>
+                ';
+            }
+            ?>
+        </section>
+    </div>
+</div>
 
     <div id="stacks-wrapper">
       <h2 class="hidden">Nate's Stacks Section</h2>
@@ -142,7 +142,6 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="showreel-wrapper">
       <div id="showreel__container" class="full-width">
-        <p id="showreel__chatbox"></p>
         <div id="showreel__video-container" class="col-span-full">
           <video controls src="video/showreel.mp4" poster="images/video-poster.png"></video>
         </div>

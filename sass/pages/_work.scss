@@ -1,0 +1,60 @@
+@use "../abstracts" as a;
+
+#works-list {
+  padding: 96px 0;
+
+  table {
+    tr {
+      display: flex;
+      height: 250px;
+    }
+
+    tr td:nth-child(2) {
+      flex: 190%;
+      padding: 24px 48px;
+      cursor: pointer;
+      line-height: 1.25;
+      transition: background-color 0.3s;
+      span {
+        font-weight: 100;
+        color: a.$sec-black;
+
+        transition: color 0.3s;
+      }
+      a i {
+        font-size: 2rem;
+        opacity: 0;
+        transition: color 0.5s;
+      }
+    }
+    tr td:nth-child(2):hover {
+      background-color: white;
+      span {
+        color: black;
+      }
+      a i {
+        opacity: 1;
+      }
+    }
+    td {
+      width: 100%;
+      height: 100%;
+      font-size: 3rem;
+    }
+  }
+}
+
+#works-showing-image {
+  width: 100%;
+  height: auto;
+  a {
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
