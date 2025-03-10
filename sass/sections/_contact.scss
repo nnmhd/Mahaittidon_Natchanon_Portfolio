@@ -10,12 +10,17 @@
 
 #contact-box__form {
   margin-top: 32px;
+  margin: 0 auto;
   input {
     width: 100%;
     border: 2px a.$sec-black solid;
     padding: 18px;
     font-size: 1;
     margin-top: 16px;
+  }
+
+  input:focus {
+    background-color: white;
   }
 
   button {
@@ -29,14 +34,15 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1079px) {
   #contact-box__form {
-    grid-column-start: 2;
+    width: 50%;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1080px) and (max-width: 1279px) {
   #contact-box__form {
-    grid-column-start: 4;
+    margin: 0 auto;
+    width: 50%;
   }
 }

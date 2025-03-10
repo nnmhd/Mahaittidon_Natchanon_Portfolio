@@ -13,15 +13,49 @@
 }
 
 #about-nate__card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  overflow: hidden;
   place-items: center;
   padding: 24px;
-  gap: 8px;
+  row-gap: 16px;
   background-color: white;
   width: 330px;
-  height: 150px;
+  height: 120px;
   border-radius: 16px;
   margin-bottom: 32px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: height 0.3s ease-in-out;
+
+  ul {
+    border-top: 1px solid a.$sec-black;
+    padding-top: 8px;
+    grid-column: 2/3;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    li {
+      margin-right: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+}
+
+#about-nate__card:hover {
+  height: 160px;
+  ul {
+    opacity: 1;
+    li {
+      opacity: 1;
+    }
+  }
+}
+
+#about-nate__card ul li:hover {
+  color: a.$black;
+  font-weight: 600;
 }
 
 #about-nate__avatar {
@@ -44,16 +78,19 @@
 }
 
 #about-nate__text {
-  margin-top: 48px;
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
   p {
-    text-align: left;
+    padding: 0 16px;
     line-height: 1.5;
-    font-size: 0.8rem;
+    font-size: 1.25rem;
   }
 }
 
 #contact-box-wrapper {
-  margin-top: 48px;
+  width: 100%;
+  margin-top: 24px;
 }
 
 #contact-box__container {
@@ -82,12 +119,12 @@
 
 // Tablet Screen
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1079px) {
   #about-nate__card {
     gap: 16px;
     background-color: white;
     width: 420px;
-    height: 150px;
+    height: 120px;
   }
 
   #about-nate__avatar {
@@ -104,9 +141,12 @@
   }
 
   #about-nate__text {
-    margin-top: 48px;
-    grid-column-start: 2;
+    padding: 0 64px;
+    margin-top: 24px;
+    width: 600px;
+
     p {
+      margin: 0 auto;
       text-align: left;
       font-size: 1.25rem;
     }
@@ -134,9 +174,12 @@
   }
 
   #about-nate__text {
+    width: 100%;
     margin-top: 32px;
-    grid-column-start: 4;
+
     p {
+      width: 600px;
+      margin: 0 auto;
       text-align: left;
       font-size: 1.25rem;
     }
@@ -146,7 +189,6 @@
 // XL Desktop Screen
 @media screen and (min-width: 1440px) {
   #about-nate__text {
-    grid-column-start: 5;
     p {
       font-size: 1rem;
     }

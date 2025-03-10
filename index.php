@@ -18,7 +18,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script defer
       src="https://kit.fontawesome.com/97e2f7a12f.js"
       crossorigin="anonymous"></script>
-      <script defer type="module" src="js/main.js"></script>
+      <script type="module" src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Hi! I'm Nate 👋</title>
   </head>
@@ -32,28 +32,28 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div id="header__container" class="grid-con">
             <div
             id="header__logo"
-            class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
+            class="col-span-1 s-col-span-1 t-col-span-1 l-col-span-2 xl-col-span-2">
             <a href="index.php">
               <img
-              src="images/Nate-Logo.svg"
+              src="images/nate-logo_rv.png"
               alt="Nate Logo"
               id="header__nate-logo">
             </a>
             </div>
-          <div id="header__bio-text" class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
-          <nav id="header__nav" class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
+          <div id="header__bio-text" class="col-span-3 s-col-span-2 t-col-span-2 l-col-span-4 xl-col-span-4"></div>
+          <nav id="header__nav" class="col-span-full s-col-span-2 t-col-span-2 l-col-span-3 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="works.php">Works</a></li>
               <li><a id="contact-link" href="about.php">Contact</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>
-          <div id="header__social-link" class="col-span-1 t-col-span-1">
+          <div id="header__social-link" class="col-span-1 s-col-span-1 t-col-span-1 xl-col-span-1">
             <button id="social-link__btn">
               <object data="images/add-sign.svg" type=""></object>
             </button>
           </div>
-          <div id="chat-box" class="col-span-full hidden">
+          <div id="chat-box" class="col-span-full hidden ">
             <h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
             <ul>
@@ -62,6 +62,27 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
+            <section
+          id="contact-box__form"
+          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
+          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
+          <form id="contact-form" method="post" action="includes/sendmail.php">
+          <input
+            id="contact-message"
+            name="message"
+            type="text"
+            placeholder="tell me a little about the project."
+            required />
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            placeholder="your@email"
+            required />
+          <button id="contact-submit" type="submit">Send</button>
+          </form>
+          <div id="feedback"><p></p></div>
+        </section>
             <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
@@ -82,16 +103,16 @@ $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $firstCard = $cards[1];
 ?>
 
-<div id="hero-wrapper">
+<div id="hero-wrapper" class="">
     <h2 class="hidden">Nate's Portfolio Hero Section - Showcasing Top Projects and Designs</h2>
-    <div id="hero__container" class="full-width">
+    <div id="hero__container" class=" full-width">
         <div id="hero_project-detail__wrapper" class="col-span-full">
             <section id="hero__project-details">
                 <button id="project-details__lightbox-controller">
                     <i class="fa-thin fa-x"></i>
                 </button>
 
-                <div id="project-details" class="col-span-full">
+                <div id="project-details" class="">
                     <div id="project-details__image" class="">
                         <img src="images/<?php echo $firstCard['img_thumbnail']; ?>" alt="<?php echo $firstCard['project_name']; ?>" />
                     </div>
@@ -103,7 +124,9 @@ $firstCard = $cards[1];
                     <p id="project-details__desc" class="col-span-1 ">
                         <?php echo $firstCard['desc_brief']; ?>
                     </p>
-                    <a id="project-link" href="project.php?id=<?php echo $firstCard['project_id']; ?>">Go to project</a>
+                    <br>
+                    <br>
+                    <a id="project-link" href="project.php?id=<?php echo $firstCard['project_id']; ?>">Explore Project <i class="fa-light fa-telescope"></i></a>
                 </div>
             </section>
         </div>
@@ -126,11 +149,11 @@ $firstCard = $cards[1];
 
     <div id="stacks-wrapper">
       <h2 class="hidden">Nate's Stacks Section</h2>
-      <div id="stacks__container" class="grid-con">
+      <div id="stacks__container" class="full-width">
         <section id="stacks" class="col-span-full">
           <p>
             Stacks <br />
-            <span>Code</span> React / Git / JavaScript / mySQL / MongoDB / HTML
+            <span>Code</span> React / Git / JavaScript / PHP / mySQL / MongoDB / HTML
             / CSS
             <br />
             <span>Design </span> Cinema 4D / After Effect / Premier Pro / Figma
@@ -152,12 +175,12 @@ $firstCard = $cards[1];
       <div id="testimonial__container" class="grid-con">
 
       <?php
-$testimonial = 'SELECT * FROM `testimonial` ORDER BY RAND() LIMIT 2';
+$testimonial = 'SELECT * FROM `testimonial`';
 $stmt = $connect->prepare($testimonial);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 echo '
-        <div class="testimonial__card col-span-full l-col-span-6 xl-col-span-6">
+        <div class="testimonial__card col-span-full ">
           <div class="card__client_company">
             <div class="card__client"><img src="images/'.$row["img_cite"].'" alt=""></div>
             <div class="card__company"><img src="images/'.$row["img_cite_company"].'" alt=""></div>
@@ -168,6 +191,7 @@ echo '
           </div>
         </div>
 '
+
 ;}
 ?>
       </div>
@@ -180,7 +204,7 @@ echo '
         </p>
         <section
           id="contact-box__form"
-          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
+          class="col-span-full ">
           <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
           <form id="contact-form" method="post" action="includes/sendmail.php">
           <input
@@ -203,12 +227,12 @@ echo '
       </div>
     </div>
 
-    <div id="footer-wrapper">
+    <div id="footer-wrapper" class="grid-con">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer__container" class="full-width">
+      <footer id="footer__container" class="col-span-full">
         <div
           id="footer"
-          class="col-span-full t-col-span-5 l-col-span-4 xl-col-span-4"></div>
+          class="col-span-full"></div>
       </footer>
     </div>
 

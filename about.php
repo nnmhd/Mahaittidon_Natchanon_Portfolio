@@ -21,53 +21,62 @@ require_once('includes/connect.php');
       Me!
     </h1>
     <div id="header-wrapper">
-      <h2 class="hidden">Nate's Portfolio Header Section</h2>
+      <h2 class="hidden">Welcome to Nate's Portfolio - Web Development and Design Projects</h2>
       <header id="header">
         <div id="header__container" class="grid-con">
-          <div
+            <div
             id="header__logo"
-            class="col-span-1 t-col-span-4 l-col-span-2 xl-col-span-2">
+            class="col-span-1 s-col-span-1 t-col-span-1 l-col-span-2 xl-col-span-2">
             <a href="index.php">
               <img
-              src="images/Nate-logo.svg"
+              src="images/nate-logo_rv.png"
               alt="Nate Logo"
               id="header__nate-logo">
             </a>
             </div>
-          <div
-            id="header__bio-text"
-            class="col-span-3 t-col-span-3 l-col-span-3 xl-col-span-4"></div>
-          <nav
-            id="header__nav"
-            class="col-span-full t-col-span-3 l-col-span-4 xl-col-span-4">
+          <div id="header__bio-text" class="col-span-3 s-col-span-2 t-col-span-2 l-col-span-4 xl-col-span-4"></div>
+          <nav id="header__nav" class="col-span-full s-col-span-2 t-col-span-2 l-col-span-3 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="works.php">Works</a></li>
               <li><a id="contact-link" href="about.php">Contact</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>
-          <div id="header__social-link" class="col-span-1 t-col-span-1">
+          <div id="header__social-link" class="col-span-1 s-col-span-1 t-col-span-1 xl-col-span-1">
             <button id="social-link__btn">
               <object data="images/add-sign.svg" type=""></object>
             </button>
           </div>
-          <div id="chat-box" class="col-span-full hidden">
+          <div id="chat-box" class="col-span-full hidden ">
             <h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
             <ul>
-              <li>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-square-behance"></i></a>
-              </li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
+            <section
+          id="contact-box__form"
+          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
+          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
+          <form id="contact-form" method="post" action="includes/sendmail.php">
+          <input
+            id="contact-message"
+            name="message"
+            type="text"
+            placeholder="tell me a little about the project."
+            required />
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            placeholder="your@email"
+            required />
+          <button id="contact-submit" type="submit">Send</button>
+          </form>
+          <div id="feedback"><p></p></div>
+        </section>
             <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
@@ -76,7 +85,7 @@ require_once('includes/connect.php');
 
     <div id="about-nate-wrapper">
       <h2 class="hidden">Nate's card</h2>
-      <div id="about-nate__container" class="grid-con">
+      <div id="about-nate__container" class="">
         <section id="about-nate__details" class="col-span-full">
           <div id="about-nate__card">
             <div id="about-nate__avatar">
@@ -86,15 +95,19 @@ require_once('includes/connect.php');
               <h2>Nate Mahaittidon</h2>
               <h3>UI Designer &amp; Frontend</h3>
             </div>
+            <ul>
+                <li><a href="cv.pdf" target="_blank">💼 CV</a></li>
+                <li><a href="resume.pdf" target="_blank">🔖 Resume</a></li>
+            </ul>
           </div>
         </section>
 
         <div
           id="about-nate__text"
-          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-4">
+          class=" ">
           <p>
             Hello, I'm Nate, Thai-born and Ontario-based. I'm a designer and
-            developer who was a Creative Director and Editor in Thailand for 20
+            developer who was a Creative Director and Editor in Thailand for 17
             years. Coffee-addicted. <br /><br />
 
             Currently, besides enjoying designing with code, I'm also the
@@ -104,15 +117,17 @@ require_once('includes/connect.php');
             We can chat about design, website development, cool projects,
             Fortnite, or which is the best vacuum machine!
           </p>
+          </section>
         </div>
       </div>
-      <p>Or</p>
+
+    
 
       <div id="contact-box-wrapper">
       <div id="contact-box__container" class="grid-con">
-        <section
+      <section
           id="contact-box__form"
-          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
+          class="col-span-full ">
           <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
           <form id="contact-form" method="post" action="includes/sendmail.php">
           <input
@@ -135,15 +150,15 @@ require_once('includes/connect.php');
       </div>
     </div>
 
-    <div id="footer-wrapper">
+    <div id="footer-wrapper" class="grid-con">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer__container" class="full-width">
+      <footer id="footer__container" class="col-span-full">
         <div
           id="footer"
-          class="col-span-full t-col-span-5 l-col-span-4 xl-col-span-4"></div>
+          class="col-span-full"></div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
   </body>
