@@ -19,15 +19,9 @@ detailLightBoxControl();
 projectLightbox();
 chatBox();
 header();
-formValidation();
 
 if (window.location.pathname.endsWith("index.php")) {
-  textHeader();
   runGSAP();
-  setupFileValidation();
-  projectDetail();
-  updateEventListeners();
-  detailLightBoxControl();
   projectLightbox();
   header();
   formValidation();
@@ -35,22 +29,12 @@ if (window.location.pathname.endsWith("index.php")) {
 }
 
 if (window.location.pathname.endsWith("work.php")) {
-  textHeader();
-  openMenu();
-  projectDetail();
-  updateEventListeners();
-  detailLightBoxControl();
   projectLightbox();
   header();
   formValidation();
 }
 
 if (window.location.pathname.endsWith("project.php")) {
-  textHeader();
-  projectDetail();
-  updateEventListeners();
-  detailLightBoxControl();
   projectLightbox();
-  chatBox();
   header();
 }

@@ -89,7 +89,7 @@ require_once('includes/connect.php');
         <section id="about-nate__details" class="col-span-full">
           <div id="about-nate__card">
             <div id="about-nate__avatar">
-              <img src="images/nate-profilepic.jpeg" alt="" />
+              <img src="images/nateprofile.png" alt="Nate" />
             </div>
             <div id="about-nate__tag">
               <h2>Nate Mahaittidon</h2>
