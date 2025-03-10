@@ -96,7 +96,7 @@ require_once('includes/connect.php');
               <h3>UI Designer &amp; Frontend</h3>
             </div>
             <ul>
-                <li><a href="cv.pdf" target="_blank">💼 CV</a></li>
+                <li><a id="downloadCV" href="NateCV.pdf" download="file/NateCV.pdf">💼 CV</a></li>
                 <li><a href="resume.pdf" target="_blank">🔖 Resume</a></li>
             </ul>
           </div>

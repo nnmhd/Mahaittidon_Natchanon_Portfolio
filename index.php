@@ -171,29 +171,37 @@ $firstCard = $cards[1];
       </div>
     </div>
 
-    <div id="testimonial-wrapper">
-      <div id="testimonial__container" class="grid-con">
+    <div id="testimonial-wrapper" class="full-width">
+      <div id="testimonial__container" class="col-span-full">
 
       <?php
 $testimonial = 'SELECT * FROM `testimonial`';
 $stmt = $connect->prepare($testimonial);
 $stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-echo '
-        <div class="testimonial__card col-span-full ">
-          <div class="card__client_company">
-            <div class="card__client"><img src="images/'.$row["img_cite"].'" alt=""></div>
-            <div class="card__company"><img src="images/'.$row["img_cite_company"].'" alt=""></div>
-          </div>
-          <div class="card__text">
-            <div class="card__testimonial-text">'.$row["cite_text"].'</div>
-            <div class="card__testimonial-cite">'.$row["cite_name"].'</div>
-          </div>
-        </div>
-'
 
-;}
+$testimonials = [];
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $testimonials[] = [
+        "img" => "images/" . $row["img_cite"],
+        "companyImg" => "images/" . $row["img_cite_company"],
+        "text" => $row["cite_text"],
+        "name" => $row["cite_name"]
+    ];
+}
+
+echo "<script>const testimonials = " . json_encode($testimonials) . ";</script>";
 ?>
+<div class="testimonial__card col-span-full">
+  <div class="card__client_company">
+    <div class="card__client"><img id="testimonial-img" src="" alt=""></div>
+    <div class="card__company"><img id="testimonial-company-img" src="" alt=""></div>
+  </div>
+  <div class="card__text">
+    <div class="card__testimonial-text" id="testimonial-text"></div>
+    <div class="card__testimonial-cite" id="testimonial-name"></div>
+  </div>
+</div>
       </div>
     </div>
     <div id="contact-box-wrapper">
@@ -227,12 +235,13 @@ echo '
       </div>
     </div>
 
-    <div id="footer-wrapper" class="grid-con">
+    <div id="footer-wrapper" class="">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer__container" class="col-span-full">
+      <footer id="footer__container" class="">
         <div
-          id="footer"
-          class="col-span-full"></div>
+          id="footer"></div>
+          <div id="footer__contact__info">
+          </div>
       </footer>
     </div>
 

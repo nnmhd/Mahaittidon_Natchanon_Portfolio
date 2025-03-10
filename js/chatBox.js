@@ -4,6 +4,7 @@ export function chatBox() {
   const chatBtnOpen = document.querySelector("#header__social-link");
 
   chatBtnOpen.addEventListener("click", () => {
+    console.log("clicked");
     chat.classList.toggle("hidden");
   });
 

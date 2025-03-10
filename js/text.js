@@ -1,6 +1,6 @@
 export function textHeader() {
   const bioText = `Nate is a UI designer &amp; frontend developer w/ a background creative director, based in London, Ontario.`;
-  const footerText = `<p>Nate Mahaittidon</p> <p>&copy;2025</p>`;
+  const footerText = `<p>Nate</p> <p>&copy;2025</p>`;
   document.querySelector("#header__bio-text").innerHTML = bioText;
   document.querySelector("#footer").innerHTML = footerText;
 
