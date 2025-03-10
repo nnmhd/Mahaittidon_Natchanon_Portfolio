@@ -1,18 +1,19 @@
 @use "../abstracts/" as a;
 
 #chat-box {
-  position: relative;
-  width: clamp(300px, 40%, 800px);
-  height: auto;
+  position: absolute;
+  width: clamp(360px, 40%, 1000px);
   margin: 0 auto;
-  position: fixed;
-  top: 50%;
+  top: 17.5vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   padding: 32px;
   z-index: 999;
   border-radius: 16px;
   background-color: a.$black;
+  box-shadow: -1px 1px 2px 0px #0000001a, -3px 3px 4px 0px #00000017,
+    -6px 7px 6px 0px #0000000d, -11px 12px 7px 0px #00000003,
+    -17px 19px 7px 0px #00000000;
 
   h2 {
     font-size: 3rem;
@@ -39,13 +40,60 @@
       }
     }
   }
+
+  input {
+    background-color: white;
+    height: 50px !important;
+    padding: 8px;
+    border: unset !important;
+  }
+
+  button {
+    background-color: antiquewhite;
+  }
 }
 
 #chatboxBtn {
-  color: white;
+  font-size: 2rem;
+  color: a.$black;
   position: absolute;
-  top: 0;
+  top: -50px;
   right: 0;
-  margin: 24px;
+  margin: 0 8px;
   cursor: pointer;
+  transition: transform 1s;
+  transform: rotate(360deg);
+}
+
+@media screen and (min-width: 440px) and (max-width: 768px) {
+  #chat-box {
+    width: clamp(360px, 70%, 1000px);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  #chat-box {
+    width: clamp(500px, 80%, 1000px);
+  }
+}
+
+// Tablet Screen (wider than 1080px)
+@media screen and (min-width: 1080px) and (max-width: 1279px) {
+  #chat-box {
+    width: clamp(500px, 80%, 1000px);
+  }
+}
+
+// Desktop Screen (Width 1280px - 1440px)
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+  #chat-box {
+    width: clamp(500px, 80%, 1000px);
+  }
+}
+
+// Desktop Screen (Wider than 1440px)
+@media screen and (min-width: 1440px) {
+  #chat-box {
+    width: clamp(500px, 80%, 1000px);
+  }
 }

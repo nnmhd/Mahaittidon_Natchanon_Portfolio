@@ -6,8 +6,15 @@
 .hidden {
   display: none;
 }
+
 .show {
   display: block;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
 }
 
 .grid-con {
@@ -48,8 +55,58 @@
   grid-column: span 3 / span 3;
 }
 
+@media screen and (min-width: 440px) and (max-width: 767px) {
+}
+
+// Mobile Screen (wider than 1080px)
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .grid-con {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-column-gap: 16px;
+    margin: 0 16px;
+  }
+
+  .full-width {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-column-gap: 16px;
+  }
+
+  .grid-temp-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 16px;
+  }
+
+  .grid-temp-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 16px;
+  }
+
+  .col-span-full {
+    grid-column: 1/-1;
+  }
+  .s-col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+  .s-col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .s-col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+  .s-col-span-4 {
+    grid-column: span 4 / span 4;
+  }
+  .s-col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+}
+
 // Tablet Screen (wider than 1080px)
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1080px) and (max-width: 1279px) {
   .grid-con {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -89,20 +146,19 @@
   }
 }
 
-// Desktop Screen (Wider than 1280px)
-@media screen and (min-width: 1280px) {
+// Desktop Screen (Width 1280px - 1440px)
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
   .grid-con {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-column-gap: 16px;
-    margin-inline: max(5%, 105px);
+    margin: 0 24px;
   }
 
   .full-width {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-column-gap: 16px;
-    padding: 0 105px;
   }
 
   .col-span-full {

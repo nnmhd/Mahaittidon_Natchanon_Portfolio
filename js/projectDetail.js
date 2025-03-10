@@ -4,7 +4,6 @@ export function projectDetail() {
     .then((response) => response.json())
     .then((data) => {
       projectData = data;
-      console.log(projectData);
       document.querySelectorAll(".hero__card").forEach((card) => {
         card.addEventListener("mouseover", () => {
           const projectId = card.getAttribute("data-id");
