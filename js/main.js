@@ -8,6 +8,7 @@ import { runGSAP } from "./gsap.js";
 import { textHeader } from "./text.js";
 import { openMenu } from "./menu.js";
 import { projectLightbox } from "./showDetails.js";
+import { testimonialLoop } from "./testimonialLoop.js";
 
 textHeader();
 setupFileValidation();
@@ -28,9 +29,9 @@ if (window.location.pathname.endsWith("index.php")) {
   updateEventListeners();
   detailLightBoxControl();
   projectLightbox();
-  chatBox();
   header();
   formValidation();
+  testimonialLoop();
 }
 
 if (window.location.pathname.endsWith("work.php")) {
@@ -40,7 +41,6 @@ if (window.location.pathname.endsWith("work.php")) {
   updateEventListeners();
   detailLightBoxControl();
   projectLightbox();
-  chatBox();
   header();
   formValidation();
 }

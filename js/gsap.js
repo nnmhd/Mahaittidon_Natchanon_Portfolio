@@ -29,7 +29,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -49,7 +49,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -67,7 +67,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -90,7 +90,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -110,7 +110,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -128,7 +128,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -145,7 +145,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -163,7 +163,7 @@ export function runGSAP() {
           start: "top 30%",
           end: "top 50%",
           toggleActions: "play none reverse none",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -180,7 +180,7 @@ export function runGSAP() {
           start: "top 30%",
           end: "top 50%",
           toggleActions: "play none reverse none",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -203,7 +203,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -223,7 +223,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -241,7 +241,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -258,7 +258,7 @@ export function runGSAP() {
           start: "top 30px",
           end: "top 40px",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -276,7 +276,7 @@ export function runGSAP() {
           start: "top 30%",
           end: "top 50%",
           toggleActions: "play none reverse none",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -293,7 +293,7 @@ export function runGSAP() {
           start: "top 30%",
           end: "top 50%",
           toggleActions: "play none reverse none",
-          markers: true,
+          markers: false,
         },
       }
     );
@@ -309,7 +309,7 @@ export function runGSAP() {
           start: "top 30%",
           end: "top 40%",
           toggleActions: "play none none reverse",
-          markers: true,
+          markers: false,
         },
       }
     );
