@@ -298,21 +298,21 @@ export function runGSAP() {
       }
     );
 
-    gsap.fromTo(
-      testimonial,
-      { y: "400px" },
-      {
-        y: "0",
-        duration: 0.5,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          start: "top 30%",
-          end: "top 40%",
-          toggleActions: "play none none reverse",
-          markers: false,
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   testimonial,
+    //   { y: "600px" },
+    //   {
+    //     y: "72px",
+    //     duration: 0.5,
+    //     ease: "power2.inOut",
+    //     scrollTrigger: {
+    //       start: "top 30%",
+    //       end: "top 40%",
+    //       toggleActions: "play none none reverse",
+    //       markers: false,
+    //     },
+    //   }
+    // );
   });
 
   screenSize.add("(min-width: 1024px)", () => {});

@@ -9,7 +9,9 @@ import { textHeader } from "./text.js";
 import { openMenu } from "./menu.js";
 import { projectLightbox } from "./showDetails.js";
 import { testimonialLoop } from "./testimonialLoop.js";
+import { construction } from "./contruction.js";
 
+// construction();
 textHeader();
 setupFileValidation();
 openMenu();

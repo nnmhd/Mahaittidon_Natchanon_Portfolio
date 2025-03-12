@@ -188,7 +188,6 @@
 // Desktop Screen (Wider than 1440px)
 @media screen and (min-width: 1440px) {
   #testimonial-wrapper {
-    margin-top: 48px;
   }
   #testimonial__container {
     width: 600px;
@@ -196,6 +195,7 @@
     margin: 0 auto;
   }
   .testimonial__card {
+    margin-top: 0;
     height: 200px;
   }
 }
