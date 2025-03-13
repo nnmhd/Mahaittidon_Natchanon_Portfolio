@@ -1,7 +1,4 @@
 <?php 
-// call the connect.php file 
-// and create a connection 
-// and query the database and fetch the data
 require_once('includes/connect.php');
 $sql = "SELECT p.project_id, c.company_name FROM project AS p 
         INNER JOIN clients AS c ON p.client_id = c.client_id";
@@ -97,11 +94,10 @@ $projects = 'SELECT p.project_id, p.project_name, p.desc_headline, p.img_thumbna
                     p.desc_brief, p.desc_subhead, c.company_name, p.img_card 
              FROM project AS p
              INNER JOIN clients AS c ON p.client_id = c.client_id 
-             ORDER BY RAND() LIMIT 3';
+             ORDER BY RAND() LIMIT 6';
 $stmt = $connect->prepare($projects);
 $stmt->execute();
 $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
 $firstCard = $cards[1];
 ?>

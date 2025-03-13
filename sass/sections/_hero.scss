@@ -2,14 +2,40 @@
 
 #hero-wrapper {
   position: relative;
+  height: 100%;
+}
+
+#hero__container {
+  height: 100%;
+}
+
+#hero__card-deck {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
   height: auto;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__card {
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  img {
+    width: 100%;
+  }
 }
 
 #hero_project-detail__wrapper {
   position: absolute;
   left: 0;
   width: 100vw;
-  z-index: 999;
+  z-index: 9999;
   background-color: a.$white;
   transform: translateY(-110vh);
   opacity: 0;
@@ -84,31 +110,6 @@
   margin-top: 32px;
 }
 
-// !Hero Card deck
-#hero__card-deck {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  height: auto;
-  gap: 24px;
-  margin: 0;
-  padding: 48px;
-  overflow: visible;
-}
-
-.hero__card {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  object-fit: cover;
-  cursor: pointer;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-  img {
-    width: 100%;
-  }
-}
-
 // Tablet Screen
 
 @media screen and (min-width: 768px) and (max-width: 1079px) {
@@ -135,9 +136,6 @@
   #hero__card-deck {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
   }
 
   .hero__card {
@@ -148,6 +146,7 @@
 
 @media screen and (min-width: 1080px) and (max-width: 1279px) {
   #hero__container {
+    place-items: unset;
     min-height: 400px;
     height: 600px;
   }
@@ -219,15 +218,17 @@
 
   //!Hero Cards
   #hero__card-deck {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     margin-top: 0;
-    row-gap: 36px;
-    flex-direction: row;
-    justify-content: center;
+    row-gap: 0;
+    column-gap: 0;
   }
 
   .hero__card {
-    width: 300px;
+    width: 100%;
     height: auto;
   }
 }

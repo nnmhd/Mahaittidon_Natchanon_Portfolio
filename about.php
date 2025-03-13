@@ -85,7 +85,7 @@ require_once('includes/connect.php');
 
     <div id="about-nate-wrapper">
       <h2 class="hidden">Nate's card</h2>
-      <div id="about-nate__container" class="">
+      <div id="about-nate__container" class="grid-con">
         <section id="about-nate__details" class="col-span-full">
           <div id="about-nate__card">
             <div id="about-nate__avatar">
@@ -104,18 +104,12 @@ require_once('includes/connect.php');
 
         <div
           id="about-nate__text"
-          class=" ">
+          class="col-span-full">
           <p>
-            Hello, I'm Nate, Thai-born and Ontario-based. I'm a designer and
-            developer who was a Creative Director and Editor in Thailand for 17
-            years. Coffee-addicted. <br /><br />
+          Hey, I'm Nate! 👋 A Thai-born 🇹🇭, Ontario-based Frontend Developer who spent 17 years as a Creative Director and Editor in Thailand. I'm all about communication design, love building cool and useful things, and enjoy problem-solving with a great team. ¶ After two years of reskilling from scratch, I'm now stepping into the world of web development! super excited to blend my years of creative experience with this new adventure in code! With a strong foundation in UI/UX design, I bridge the gap between design and development, crafting seamless, user-friendly experiences from concept to code. I work with HTML <i class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i> (Sass, Tailwind), JavaScript <i class="fa-brands fa-js"></i>, and animation tools like GSAP to bring designs to life. My workflow is powered by Figma <i class="fa-brands fa-figma"></i>, Adobe Creative Suite, and Blender for prototyping and visuals, while Git, GitHub <i class="fa-brands fa-github"></i>, and Webflow help me keep everything smooth and collaborative. ¶ When I'm not designing or coding, I'm a full-time dad to my 8-year-old son, Chim—my Fortnite teammate and my little sidekick in life. I also happen to be the starting player when it comes to cleaning the house.
 
-            Currently, besides enjoying designing with code, I'm also the
-            full-time daddy of my 8-year-old son, Chim, my Fortnite teammate.
-            I'm still the professional house cleaner for my family. <br /><br />
 
-            We can chat about design, website development, cool projects,
-            Fortnite, or which is the best vacuum machine!
+          Let's chat about design, web development, cool projects, Fortnite, or even the best vacuum cleaner on the market! 🚀
           </p>
           </section>
         </div>

@@ -13,7 +13,6 @@ export function construction() {
   textDiv.innerText = "This site is under construction.";
   textDiv.style.position = "absolute";
   textDiv.style.color = "black";
-  textDiv.style.fontSize = "10rem";
   textDiv.style.fontFamily = "Arial, sans-serif";
 
   div.appendChild(textDiv);

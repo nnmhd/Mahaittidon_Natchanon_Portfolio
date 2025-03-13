@@ -1,7 +1,9 @@
 @use "../abstracts/" as a;
 
 #stacks__container {
+  background-color: none;
   padding: 24px;
+  z-index: 100;
   section {
     p {
       font-size: 2rem;
