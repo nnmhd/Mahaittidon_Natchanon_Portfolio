@@ -13,7 +13,7 @@
 }
 
 #about-nate__card {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 2fr;
   overflow: hidden;
   place-items: center;
@@ -78,13 +78,13 @@
 }
 
 #about-nate__text {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   height: auto;
   p {
-    padding: 0 16px;
     line-height: 1.5;
-    font-size: 1.25rem;
+    font-size: 2.5rem;
+    font-weight: 200;
   }
 }
 
@@ -143,12 +143,12 @@
   #about-nate__text {
     padding: 0 64px;
     margin-top: 24px;
-    width: 600px;
+    width: 100%;
 
     p {
       margin: 0 auto;
       text-align: left;
-      font-size: 1.25rem;
+      font-size: 3rem;
     }
   }
 }
@@ -178,10 +178,9 @@
     margin-top: 32px;
 
     p {
-      width: 600px;
       margin: 0 auto;
       text-align: left;
-      font-size: 1.25rem;
+      font-size: 2.5rem;
     }
   }
 }

@@ -1,0 +1,26 @@
+#construction {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#underconstruction {
+  display: flex;
+  font-size: 15rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 500%;
+  height: 40vh;
+  background-color: yellow;
+  text-align: center;
+  transform: rotate(45deg);
+  position: sticky;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  left: 50%;
+  color: black;
+  font-weight: 700;
+  line-height: 1;
+}
