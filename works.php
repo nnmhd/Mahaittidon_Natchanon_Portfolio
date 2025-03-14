@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script defer
       src="https://kit.fontawesome.com/97e2f7a12f.js"
       crossorigin="anonymous"></script>
-      <script defer type="module" src="js/main.js"></script>
+      <script defer type="module" src="js/worksp.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Hi! I'm Nate 👋</title>
   </head>
@@ -111,8 +111,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
       </footer>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
 </body>
 </html>
