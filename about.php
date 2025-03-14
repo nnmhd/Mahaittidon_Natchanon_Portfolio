@@ -10,7 +10,8 @@ require_once('includes/connect.php');
     <script defer
       src="https://kit.fontawesome.com/97e2f7a12f.js"
       crossorigin="anonymous"></script>
-      <script defer type="module" src="js/main.js"></script>
+      <!-- <script defer type="module" src="js/main.js"></script> -->
+      <script type="module" src="js/contactp.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Hi! I'm Nate, This Is Me In Nutshell! 👋</title>
   </head>
@@ -94,17 +95,34 @@ require_once('includes/connect.php');
           </p>
           </section>
         </div>
-      </div>
 
-      <!-- <div id="contact-box-wrapper">
-      <div id="contact-box__container" class="grid-con">
-        <p class="col-span-full">
-          For your cool project, I can help! <wbr /> leave your message and
-          email here.
-        </p>
-    
+    <div id="contact-box-wrapper" class="col-span-full">
+      <div id="contact-box__container" class="">
+        <section
+          id="contact-box__form"
+          class="col-span-full ">
+          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
+          <form id="contact-form" method="post" action="includes/sendmail.php">
+          <input
+            id="contact-message"
+            name="message"
+            type="text"
+            placeholder="tell me a little about the project."
+            required />
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            placeholder="your@email"
+            required />
+          <button id="contact-submit" type="submit">Send</button>
+          <div id="feedBackBox"></div>
+          </form>
+        </section>
       </div>
-    </div> -->
+    </div>
+    </div>
+    </div>
 
     <div id="footer-wrapper" class="">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>

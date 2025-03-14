@@ -21,7 +21,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <script
       src="https://kit.fontawesome.com/97e2f7a12f.js"
       crossorigin="anonymous"></script>
-      <script type="module" src="js/main.js"></script>
+      <script type="module" src="js/projectp.js"></script>
     <link rel="stylesheet" href="css/main.css" />
     <title>Hi! I'm Nate, This is what a big little thing I did! 👋</title>
   </head>
