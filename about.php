@@ -56,27 +56,7 @@ require_once('includes/connect.php');
                 <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
-            <section
-          id="contact-box__form"
-          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
-          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
-          <form id="contact-form" method="post" action="includes/sendmail.php">
-          <input
-            id="contact-message"
-            name="message"
-            type="text"
-            placeholder="tell me a little about the project."
-            required />
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            placeholder="your@email"
-            required />
-          <button id="contact-submit" type="submit">Send</button>
-          </form>
-          <div id="feedback"><p></p></div>
-        </section>
+            
             <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
@@ -105,55 +85,37 @@ require_once('includes/connect.php');
         <div
           id="about-nate__text"
           class="col-span-full">
-          <p>
+          <p class="reveal-text">
           Hey, I'm Nate! 👋 A Thai-born 🇹🇭, Ontario-based Frontend Developer who spent 17 years as a Creative Director and Editor in Thailand. I'm all about communication design, love building cool and useful things, and enjoy problem-solving with a great team. ¶ After two years of reskilling from scratch, I'm now stepping into the world of web development! super excited to blend my years of creative experience with this new adventure in code! With a strong foundation in UI/UX design, I bridge the gap between design and development, crafting seamless, user-friendly experiences from concept to code. I work with HTML <i class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i> (Sass, Tailwind), JavaScript <i class="fa-brands fa-js"></i>, and animation tools like GSAP to bring designs to life. My workflow is powered by Figma <i class="fa-brands fa-figma"></i>, Adobe Creative Suite, and Blender for prototyping and visuals, while Git, GitHub <i class="fa-brands fa-github"></i>, and Webflow help me keep everything smooth and collaborative. ¶ When I'm not designing or coding, I'm a full-time dad to my 8-year-old son, Chim—my Fortnite teammate and my little sidekick in life. I also happen to be the starting player when it comes to cleaning the house.
-
-
           Let's chat about design, web development, cool projects, Fortnite, or even the best vacuum cleaner on the market! 🚀
           </p>
           </section>
         </div>
       </div>
 
-    
-
-      <div id="contact-box-wrapper">
+      <!-- <div id="contact-box-wrapper">
       <div id="contact-box__container" class="grid-con">
-      <section
-          id="contact-box__form"
-          class="col-span-full ">
-          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
-          <form id="contact-form" method="post" action="includes/sendmail.php">
-          <input
-            id="contact-message"
-            name="message"
-            type="text"
-            placeholder="tell me a little about the project."
-            required />
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            placeholder="your@email"
-            required />
-          <button id="contact-submit" type="submit">Send</button>
-          </form>
-          <div id="feedback"><p></p></div>
-        </section>
-
+        <p class="col-span-full">
+          For your cool project, I can help! <wbr /> leave your message and
+          email here.
+        </p>
+    
       </div>
-    </div>
+    </div> -->
 
-    <div id="footer-wrapper" class="grid-con">
+    <div id="footer-wrapper" class="">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer__container" class="col-span-full">
+      <footer id="footer__container" class="">
         <div
-          id="footer"
-          class="col-span-full"></div>
+          id="footer"></div>
+          <div id="footer__contact__info">
+          </div>
       </footer>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+<script src="https://unpkg.com/split-type@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   </body>
 </html>

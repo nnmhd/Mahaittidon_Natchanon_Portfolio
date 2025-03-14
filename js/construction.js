@@ -1,4 +1,5 @@
 export function construction() {
+  console.log("Construction mode activated.");
   const div = document.createElement("div");
   div.id = "construction";
   div.style.position = "absolute";

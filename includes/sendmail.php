@@ -15,7 +15,7 @@ if (empty($message)) {
 if (empty($email)) {
     $errors['email'] = 'Please leave your email.';
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors['legit_email'] = 'Email could be real!';
+    $errors['email'] = 'Invalid email address.';
 }
 
 if (!empty($errors)) {

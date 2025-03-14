@@ -62,27 +62,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
-            <section
-          id="contact-box__form"
-          class="col-span-full t-col-span-6 l-col-span-6 xl-col-span-6">
-          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
-          <form id="contact-form" method="post" action="includes/sendmail.php">
-          <input
-            id="contact-message"
-            name="message"
-            type="text"
-            placeholder="tell me a little about the project."
-            required />
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            placeholder="your@email"
-            required />
-          <button id="contact-submit" type="submit">Send</button>
-          </form>
-          <div id="feedback"><p></p></div>
-        </section>
+           
             <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>
@@ -227,9 +207,11 @@ echo "<script>const testimonials = " . json_encode($testimonials) . ";</script>"
             placeholder="your@email"
             required />
           <button id="contact-submit" type="submit">Send</button>
+          <div id="feedBackBox"></div>
           </form>
-          <div id="feedback"><p></p></div>
         </section>
+
+
 
       </div>
     </div>
