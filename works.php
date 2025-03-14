@@ -78,7 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
             </div>
-            
+</header>
+</div>
+
+    <section id="project__container" class="grid-con">
     <div id="project-table" class="col-span-full">
         <?php foreach ($rows as $row): ?>
         <div class="project-row">
@@ -96,17 +99,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
         <?php endforeach; ?>
-    </div>
+
     </section>
-    <div id="footer-wrapper">
+
+    <div id="footer-wrapper" class="">
       <h2 class="hidden">The Nate's Portfolio Footer</h2>
-      <footer id="footer__container" class="col-span-full">
+      <footer id="footer__container" class="">
         <div
-          id="footer"
-          class="col-span-full"></div>
+          id="footer"></div>
+          <div id="footer__contact__info">
+          </div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
 </body>
