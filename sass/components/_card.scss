@@ -43,6 +43,18 @@
   }
 }
 
+#nate-image {
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 24px;
+
+  img {
+    object-position: 50% -50%;
+    width: 100%;
+  }
+}
+
 #about-nate__card:hover {
   height: 160px;
   ul {
@@ -90,6 +102,7 @@
   i {
     display: inline-block;
     animation: wiggle 1s infinite;
+    color: salmon;
   }
 
   @keyframes wiggle {
@@ -156,8 +169,6 @@
   }
 
   #about-nate__text {
-    padding: 0 64px;
-    margin-top: 24px;
     width: 100%;
 
     p {
@@ -190,7 +201,6 @@
 
   #about-nate__text {
     width: 100%;
-    margin-top: 32px;
 
     p {
       margin: 0 auto;

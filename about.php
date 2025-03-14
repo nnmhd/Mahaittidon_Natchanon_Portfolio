@@ -82,6 +82,9 @@ require_once('includes/connect.php');
           </div>
         </section>
 
+        <div id="nate-image">
+          <img src="images/nate-image.gif" alt="Nate Images in GIF">
+        </div>
         <div
           id="about-nate__text"
           class="col-span-full">

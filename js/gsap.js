@@ -17,7 +17,7 @@ export function runGSAP() {
   const boxRect = cardBox.getBoundingClientRect();
   const cardRect = cardBox.getBoundingClientRect();
   const centerX = boxRect.left + boxRect.width / 2 - cardRect.width / 2;
-  const centerY = boxRect.top + boxRect.height / 2 - cardRect.height / 2;
+  const centerY = boxRect.top + boxRect.height / 2.5 - cardRect.height / 2;
 
   // !440 ~ 1079px
   screenSize.add("(min-width: 400px) and (max-width: 767px)", () => {

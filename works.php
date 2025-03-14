@@ -77,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
             </ul>
+            </div>
             
     <div id="project-table" class="col-span-full">
         <?php foreach ($rows as $row): ?>
