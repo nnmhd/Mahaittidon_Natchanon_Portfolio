@@ -1,37 +1,42 @@
 export function formValidation() {
-  const form = document.querySelector("#contact-form");
-  const feedBack = document.querySelector("#feedback");
-  function regForm(event) {
-    event.preventDefault();
+  const forms = document.querySelectorAll("#contact-form");
+  const feedBack = document.querySelector("#feedBackBox");
 
-    const formData = new FormData(form);
+  forms.forEach((form) => {
+    function regForm(event) {
+      event.preventDefault();
 
-    fetch("includes/sendmail.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((responseData) => {
-        feedBack.innerHTML = "";
+      const formData = new FormData(form);
 
-        if (responseData.errors) {
-          Object.keys(responseData.errors).forEach((key) => {
-            const errorElement = document.createElement("p");
-            errorElement.textContent = responseData.errors[key];
-            feedBack.appendChild(errorElement);
-          });
-        } else {
-          form.reset();
-          const successMessage = document.createElement("p");
-          successMessage.textContent = responseData.message;
-          feedBack.appendChild(successMessage);
-        }
+      fetch("includes/sendmail.php", {
+        method: "POST",
+        body: formData,
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        feedBack.innerHTML = "<p>Something went wrong. Please try again.</p>";
-      });
-  }
+        .then((response) => response.text())
+        .then((responseText) => {
+          const responseData = JSON.parse(responseText);
 
-  form.addEventListener("submit", regForm);
+          feedBack.innerHTML = "";
+          feedBack.style.display = "block";
+
+          if (responseData.errors) {
+            Object.keys(responseData.errors).forEach((key) => {
+              const errorElement = document.createElement("p");
+              errorElement.innerText = responseData.errors[key];
+              feedBack.appendChild(errorElement);
+            });
+          } else {
+            form.reset();
+            const successMessage = document.createElement("p");
+            successMessage.innerText = responseData.message;
+            feedBack.appendChild(successMessage);
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+          feedBack.innerHTML = "<p>Something went wrong. Please try again.</p>";
+        });
+    }
+    form.addEventListener("submit", regForm);
+  });
 }
