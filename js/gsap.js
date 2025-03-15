@@ -11,9 +11,7 @@ export function runGSAP() {
   const videoContainer = document.querySelector("#showreel__container");
   const video = document.querySelector("#showreel__video-container");
   const Avideo = document.querySelector("#showreel__video-container video");
-  const stacks = document.querySelector("#stacks");
   const screenSize = gsap.matchMedia();
-  const testimonial = document.querySelector("#testimonial-wrapper");
   const boxRect = cardBox.getBoundingClientRect();
   const cardRect = cardBox.getBoundingClientRect();
   const centerX = boxRect.left + boxRect.width / 2 - cardRect.width / 2;
