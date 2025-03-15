@@ -58,15 +58,37 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             </button>
           </div>
           <div id="chat-box" class="col-span-full hidden ">
-            <h2>Let's Connect!</h2>
+            <div id="avatar"><img src="images/nate-notion.gif" alt="Nate Avatar"><span></span></div>
+            <div id="greeting__sociallinks"><h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
-            <ul>
-                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-square-behance"></i></a></li>
-            </ul>
-           
+            <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/natchanone/"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            </ul></div>
+            
+            
+            <section
+          id="contact-box__form"
+          class="col-span-full ">
+          <h2 class="hidden">Connect Nate Easily Here! Let's Make Some Chat</h2>
+          <form id="contact-form" method="post" action="includes/sendmail.php">
+          <input
+            id="contact-message"
+            name="message"
+            type="text"
+            placeholder="Or write your message here."
+            required />
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            placeholder="your@email"
+            required />
+          <button id="contact-submit" type="submit">Send</button>
+          <div id="feedBackBox"></div>
+          </form>
+        </section>
             <i id="chatboxBtn" class="fa-thin fa-x"></i>
           </div>
         </div>

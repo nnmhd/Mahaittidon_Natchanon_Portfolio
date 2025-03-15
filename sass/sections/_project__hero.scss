@@ -20,6 +20,7 @@
 
   img {
     width: 100%;
+    min-width: 100px;
     height: 100%;
     border-radius: 24px;
     object-fit: cover;
@@ -85,12 +86,11 @@
 }
 
 #other-project__containter {
-  margin-bottom: 36px;
+  margin-bottom: 0;
 }
 
 .other-project__card {
   display: flex;
-  align-items: end;
   column-gap: 16px;
   width: 100%;
   height: 85px;
@@ -102,7 +102,9 @@
 }
 
 .other-project__image {
+  display: flex;
   width: 25%;
+  min-width: 120px;
   height: 100%;
 
   img {
@@ -145,10 +147,10 @@
   #other-project__containter {
     display: flex;
     flex-wrap: nowrap;
-    width: 120vw;
   }
 
   .other-project__card {
+    height: 100px;
   }
 
   .other-project__project-name,

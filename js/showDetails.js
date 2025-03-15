@@ -26,7 +26,6 @@ export function detailLightBoxControl() {
 
   if (lightboxController) {
     lightboxController.addEventListener("click", () => {
-      console.log("clicked");
       projectDetails.style.transform = "translateY(-150vh)";
       projectDetails.style.opacity = "0";
     });
