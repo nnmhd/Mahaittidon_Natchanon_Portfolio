@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <nav id="header__nav" class="col-span-full s-col-span-2 t-col-span-2 l-col-span-3 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="works.php">Works</a></li>
-              <li><a id="contact-link" href="about.php">Contact</a></li>
+              <li><a id="contact-link" href="about.php">About</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>
@@ -73,9 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div id="greeting__sociallinks"><h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
             <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/natchanone/"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/natchanone/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul></div>
             
             

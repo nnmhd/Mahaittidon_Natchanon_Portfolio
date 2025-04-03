@@ -1,6 +1,15 @@
 export function runGSAP() {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+  gsap.to("#partition", {
+    autoAlpha: 0,
+    duration: 1,
+    ease: "power1.out",
+    onComplete: () => {
+      document.querySelector("#partition")?.classList.add("hidden");
+    },
+  });
+
   const cards = document.querySelectorAll(".hero__card");
   const cardBox = document.querySelector("#hero__card-deck");
   const heroWrapper = document.querySelector("#hero-wrapper");
@@ -42,6 +51,7 @@ export function runGSAP() {
           end: "top 40px",
           toggleActions: "play none none reverse",
           markers: false,
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         },
       }
     );

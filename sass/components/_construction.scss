@@ -1,3 +1,5 @@
+@use "../abstracts/" as a;
+
 #construction {
   position: absolute;
   top: 0;
@@ -23,4 +25,12 @@
   color: black;
   font-weight: 700;
   line-height: 1;
+}
+
+#partition {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: a.$white;
+  z-index: 1000000;
 }

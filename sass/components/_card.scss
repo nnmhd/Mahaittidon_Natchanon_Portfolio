@@ -43,16 +43,43 @@
   }
 }
 
+#nate_image_contact {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  #contact-box-wrapper {
+    height: 70px;
+    margin: 16px 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  form {
+    margin: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    input {
+      margin: 0;
+    }
+    input:nth-of-type(1) {
+      margin-bottom: 16px;
+    }
+  }
+  #contact-box-wrapper:has(form:focus-within) {
+    height: 250px;
+  }
+}
+
 #nate-image {
-  width: 400px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
-  margin-bottom: 24px;
-
-  img {
-    object-position: 50% -50%;
-    width: 100%;
-  }
+  margin: 0;
+  grid-column: 1/2;
+  background-image: url("../images/nate-image.gif");
+  background-position: 0% 20%;
+  background-size: cover;
 }
 
 #about-nate__card:hover {
@@ -95,7 +122,7 @@
   height: auto;
   p {
     line-height: 1.5;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 200;
   }
 
@@ -173,13 +200,64 @@
     }
   }
 
+  #nate_image_contact {
+    width: 100%;
+    height: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    #contact-box-wrapper {
+      width: 100%;
+      height: inherit;
+      margin: 0;
+      overflow: visible;
+      transition: all 0.3s ease-in-out;
+      grid-column: 2/2;
+    }
+
+    #contact-box__container {
+      margin: 0;
+    }
+
+    #contact-box__form {
+      width: 100%;
+      margin: 0;
+    }
+
+    form {
+      margin: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      input {
+        margin: 0;
+      }
+      input:nth-of-type(1) {
+        margin-bottom: 16px;
+      }
+    }
+    #contact-box-wrapper:has(form:focus-within) {
+      height: 100%;
+    }
+  }
+
+  #nate-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    grid-column: 1/2;
+    margin: 0;
+  }
+
   #about-nate__text {
+    margin-top: 48px;
     width: 100%;
 
     p {
       margin: 0 auto;
       text-align: left;
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -188,10 +266,60 @@
 
 @media screen and (min-width: 1024px) {
   #about-nate-wrapper {
-    margin-top: 112px;
+    margin-top: 64px;
   }
   #about-nate__card {
     gap: 16px;
+  }
+
+  #nate_image_contact {
+    width: 100%;
+    height: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    #contact-box-wrapper {
+      width: 100%;
+      height: inherit;
+      margin: 0;
+      overflow: visible;
+      transition: all 0.3s ease-in-out;
+      grid-column: 2/2;
+    }
+
+    #contact-box__container {
+      margin: 0;
+    }
+
+    #contact-box__form {
+      width: 100%;
+      margin: 0;
+    }
+
+    form {
+      margin: 0;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      input {
+        margin: 0;
+      }
+      input:nth-of-type(1) {
+        margin-bottom: 16px;
+      }
+    }
+    #contact-box-wrapper:has(form:focus-within) {
+      height: 100%;
+    }
+  }
+
+  #nate-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    grid-column: 1/2;
+    margin: 0;
   }
 
   #about-nate__avatar {
@@ -205,12 +333,13 @@
   }
 
   #about-nate__text {
+    margin-top: 48px;
     width: 100%;
 
     p {
       margin: 0 auto;
       text-align: left;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -218,8 +347,9 @@
 // XL Desktop Screen
 @media screen and (min-width: 1440px) {
   #about-nate__text {
+    margin-top: 48px;
     p {
-      font-size: 3rem;
+      font-size: 1.5rem;
     }
   }
 }

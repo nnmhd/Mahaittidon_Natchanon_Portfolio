@@ -48,7 +48,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
           <nav id="header__nav" class="col-span-full s-col-span-2 t-col-span-2 l-col-span-3 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="works.php">Works</a></li>
-              <li><a id="contact-link" href="about.php">Contact</a></li>
+              <li><a id="contact-link" href="about.php">About</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>
@@ -62,9 +62,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             <div id="greeting__sociallinks"><h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
             <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/natchanone/"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/natchanone/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul></div>
             
             
@@ -290,7 +288,5 @@ echo '
           class="col-span-full"></div>
       </footer>
     </div>
-    <script src="js/main.js"></script>
-    <script src="js/text.js"></script>
   </body>
 </html>
