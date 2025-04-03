@@ -25,7 +25,10 @@
   max-width: 300px;
   object-fit: cover;
   cursor: pointer;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: 0px 1.4px 1.1px rgba(0, 0, 0, 0.02),
+    0px 3.3px 2.6px rgba(0, 0, 0, 0.03), 0px 6.2px 5px rgba(0, 0, 0, 0.04),
+    0px 11.1px 8.9px rgba(0, 0, 0, 0.045), 0px 20.9px 16.7px rgba(0, 0, 0, 0.05),
+    0px 50px 40px rgba(0, 0, 0, 0.06);
   img {
     width: 100%;
   }
@@ -35,6 +38,7 @@
   position: absolute;
   left: 0;
   width: 100vw;
+  height: fit-content;
   z-index: 9999;
   background-color: a.$white;
   transform: translateY(-200vh);

@@ -39,7 +39,7 @@ require_once('includes/connect.php');
           <nav id="header__nav" class="col-span-full s-col-span-2 t-col-span-2 l-col-span-3 xl-col-span-4">
             <ul>
               <li><a id="portfolio-link" href="works.php">Works</a></li>
-              <li><a id="contact-link" href="about.php">Contact</a></li>
+              <li><a id="contact-link" href="about.php">About</a></li>
             </ul>
           </nav>
           <button id="header__menu-button" class="col-span-1">Menu</button>
@@ -53,9 +53,7 @@ require_once('includes/connect.php');
             <div id="greeting__sociallinks"><h2>Let's Connect!</h2>
             <p>I'm waiting you somewhere in the world 🌎</p>
             <ul class="social-links">
-            <li><a href="https://www.linkedin.com/in/natchanone/"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/natchanone/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul></div>
             
             
@@ -104,21 +102,11 @@ require_once('includes/connect.php');
             </ul>
           </div>
         </section>
-
-        <div id="nate-image">
-          <img src="images/nate-image.gif" alt="Nate Images in GIF">
+  <div id="nate_image_contact" class="col-span-full">
+  <div id="nate-image">
+        
         </div>
-        <div
-          id="about-nate__text"
-          class="col-span-full">
-          <p class="reveal-text">
-          Hey, I'm Nate! 👋 A Thai-born 🇹🇭, Ontario-based Frontend Developer who spent 17 years as a Creative Director and Editor in Thailand. I'm all about communication design, love building cool and useful things, and enjoy problem-solving with a great team. ¶ After two years of reskilling from scratch, I'm now stepping into the world of web development! super excited to blend my years of creative experience with this new adventure in code! With a strong foundation in UI/UX design, I bridge the gap between design and development, crafting seamless, user-friendly experiences from concept to code. I work with HTML <i class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i> (Sass, Tailwind), JavaScript <i class="fa-brands fa-js"></i>, and animation tools like GSAP to bring designs to life. My workflow is powered by Figma <i class="fa-brands fa-figma"></i>, Adobe Creative Suite, and Blender for prototyping and visuals, while Git, GitHub <i class="fa-brands fa-github"></i>, and Webflow help me keep everything smooth and collaborative. ¶ When I'm not designing or coding, I'm a full-time dad to my 8-year-old son, Chim—my Fortnite teammate and my little sidekick in life. I also happen to be the starting player when it comes to cleaning the house.
-          Let's chat about design, web development, cool projects, Fortnite, or even the best vacuum cleaner on the market! 🚀
-          </p>
-          </section>
-        </div>
-
-    <div id="contact-box-wrapper" class="col-span-full">
+        <div id="contact-box-wrapper" class="col-span-full">
       <div id="contact-box__container" class="">
         <section
           id="contact-box__form"
@@ -143,6 +131,20 @@ require_once('includes/connect.php');
         </section>
       </div>
     </div>
+
+  </div>
+        
+        <div
+          id="about-nate__text"
+          class="col-span-full">
+          <p class="reveal-text">
+          Hey, I'm Nate! 👋 A Thai-born 🇹🇭, Ontario-based Frontend Developer who spent 17 years as a Creative Director and Editor in Thailand. I'm all about communication design, love building cool and useful things, and enjoy problem-solving with a great team. ¶ After two years of reskilling from scratch, I'm now stepping into the world of web development! super excited to blend my years of creative experience with this new adventure in code! With a strong foundation in UI/UX design, I bridge the gap between design and development, crafting seamless, user-friendly experiences from concept to code. I work with HTML <i class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i> (Sass, Tailwind), JavaScript <i class="fa-brands fa-js"></i>, and animation tools like GSAP to bring designs to life. My workflow is powered by Figma <i class="fa-brands fa-figma"></i>, Adobe Creative Suite, and Blender for prototyping and visuals, while Git, GitHub <i class="fa-brands fa-github"></i>, and Webflow help me keep everything smooth and collaborative. ¶ When I'm not designing or coding, I'm a full-time dad to my 8-year-old son, Chim—my Fortnite teammate and my little sidekick in life. I also happen to be the starting player when it comes to cleaning the house.
+          Let's chat about design, web development, cool projects, Fortnite, or even the best vacuum cleaner on the market! 🚀
+          </p>
+          </section>
+        </div>
+
+    
     </div>
     </div>
 

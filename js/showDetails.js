@@ -14,7 +14,22 @@ export function updateEventListeners() {
   }
 }
 
-window.addEventListener("resize", updateEventListeners);
+window.addEventListener("resize", () => {
+  updateEventListeners();
+  let hasReloaded = false;
+
+  if (
+    (window.innerWidth > 1024 && !hasReloaded) ||
+    (window.innerWidth <= 1024 && !hasReloaded)
+  ) {
+    location.reload();
+    hasReloaded = true;
+
+    setTimeout(() => {
+      hasReloaded = false;
+    }, 1000);
+  }
+});
 
 export function detailLightBoxControl() {
   const projectDetails = document.querySelector(
@@ -36,13 +51,13 @@ export function projectLightbox() {
   const projectDetails = document.querySelector(
     "#hero_project-detail__wrapper"
   );
-  const namecards = document.querySelectorAll(".hero__card");
+  const namecards = document.querySelectorAll(".card-deck__position img");
 
   if (window.innerWidth <= 1079) {
-    namecards.forEach((e) => {
-      e.addEventListener("click", () => {
-        event.preventDefault();
-        projectDetails.style.transform = "translateY(0)";
+    namecards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        event.preventDefault(); // ✅ ใช้ event ที่รับมา
+        projectDetails.style.transform = "translateY(-100px)";
         projectDetails.style.opacity = "1";
       });
     });
