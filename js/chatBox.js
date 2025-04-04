@@ -24,7 +24,7 @@ export function chatBox() {
   });
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 100 && !chat.classList.contains("hidden")) {
+    if (window.scrollY > 400 && !chat.classList.contains("hidden")) {
       chat.classList.add("hidden");
     }
   });
