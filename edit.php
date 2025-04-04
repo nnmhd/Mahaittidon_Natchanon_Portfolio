@@ -109,7 +109,7 @@ if (isset($_POST['update'])) {
     <section id="edit-form" class="grid-con" >
     <h1 class="col-span-full"><a  href="update.php">Back to Project List</a></h1>
 
-    <form class="col-span-full" name="update_project" method="post" action="edit.php" enctype="multipart/form-data">
+    <form class="col-span-full" name="update_project" method="post" action="edit.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
         <table  border="0">
             <tr>
                 <td>Project Name</td>

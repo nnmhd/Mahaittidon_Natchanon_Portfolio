@@ -18,16 +18,16 @@ window.addEventListener("resize", () => {
   updateEventListeners();
   let hasReloaded = false;
 
-  if (
-    (window.innerWidth > 1024 && !hasReloaded) ||
-    (window.innerWidth <= 1024 && !hasReloaded)
-  ) {
-    location.reload();
-    hasReloaded = true;
+  if (!hasReloaded) {
+    const reloadBreakpoints = [1024, 1440, 768, 440];
+    if (reloadBreakpoints.includes(window.innerWidth)) {
+      location.reload();
+      hasReloaded = true;
 
-    setTimeout(() => {
-      hasReloaded = false;
-    }, 1000);
+      setTimeout(() => {
+        hasReloaded = false;
+      }, 1000);
+    }
   }
 });
 
@@ -56,7 +56,7 @@ export function projectLightbox() {
   if (window.innerWidth <= 1079) {
     namecards.forEach((card) => {
       card.addEventListener("click", (event) => {
-        event.preventDefault(); // ✅ ใช้ event ที่รับมา
+        event.preventDefault();
         projectDetails.style.transform = "translateY(-100px)";
         projectDetails.style.opacity = "1";
       });
