@@ -147,7 +147,6 @@
 
   #other-project-wrapper {
     overflow: hidden;
-    overflow-x: scroll;
   }
 
   #other-project__containter {
@@ -217,16 +216,27 @@
 
 @media screen and (min-width: 1440px) {
   #other-project-wrapper {
+    width: 1440px;
     margin-bottom: 64px;
+    margin: 0 auto;
   }
   #other-project__containter {
     display: flex;
     flex-wrap: nowrap;
-    width: 1440px;
+    width: 100%;
     margin: 24px auto;
   }
   .other-project__image {
     width: 30%;
     height: 100%;
+
+    a {
+      aspect-ratio: 16/9;
+      object-position: center;
+
+      img {
+        height: 100%;
+      }
+    }
   }
 }

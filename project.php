@@ -134,7 +134,8 @@ echo '
   <p id="details__stacks" class="">'.$row["stack"].'</p>
   <p class="heading-text col-span-1">Link</p>
   <p id="details__project-url" class="">
-    <a href="">'.$row["project_url"].'</a>
+  
+    <a href="https://'.$row["project_url"].'" target="_blank" rel="noopener noreferrer">'.$row["project_url"].'</a>
   </p>
 </div>
 </section>

@@ -211,7 +211,6 @@
 
   .full-width {
     display: grid;
-    margin: 0 auto;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-column-gap: 16px;
     padding-inline: calc((100% - 1440px) / 2);
